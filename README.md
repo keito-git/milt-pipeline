@@ -78,13 +78,14 @@ Pre-computed outputs are in `results/` so tables can be checked without a full r
 ## Citation
 
 ```bibtex
-@misc{milt_2026,
-  author    = {Inoshita, Keito and Nojiri, Kota and Sugeno, Haruto},
-  title     = {{MiLT}: Model-in-the-Loop Uncertainty-aware Labeling and Triage
-               for Night Camera-Trap Data},
-  year      = {2026},
-  howpublished = {\url{https://github.com/keito-git/milt-pipeline}},
-  note      = {Code on GitHub},
+@article{milt_2026,
+  author        = {Inoshita, Keito and Nojiri, Kota and Sugeno, Haruto},
+  title         = {{MiLT}: Model-in-the-Loop Uncertainty-aware Labeling and Triage
+                   for Night Camera-Trap Data},
+  year          = {2026},
+  eprint        = {XXXX.XXXXX},
+  archivePrefix = {arXiv},
+  primaryClass  = {cs.CV},
 }
 ```
 
