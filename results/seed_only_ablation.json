@@ -1,0 +1,82 @@
+{
+  "description": "Ablation: seed-only (n=1000, Wakayama+Shizuoka video crops) vs full training (n=5736 = 1000 seed + 4736 Mie confirmed stills). Eval set: seed-out video crops (Wakayama+Shizuoka, n=6906). Quantifies the Mie still-image contribution.",
+  "training_sets": {
+    "seed_only": "Wakayama (n=660) + Shizuoka (n=340) video seed crops",
+    "full_5736": "seed_only + Mie (三重県) confirmed still photos (n=4736)"
+  },
+  "eval_set": "Seed-out video crops (Wakayama + Shizuoka, n=6906)",
+  "classifier_config": {
+    "max_iter": 2000,
+    "class_weight": "balanced",
+    "random_state": 42
+  },
+  "n_eval": 6906,
+  "n_rare_eval": 1480,
+  "seed_only_1000": {
+    "n_train": 1000,
+    "accuracy": 0.6405,
+    "macro_f1": 0.2527,
+    "auc_acc_budget": 0.8786,
+    "auc_rare_budget": 0.8525,
+    "auc_acc_budget_b30": 0.2226,
+    "auc_rare_budget_b30": 0.2027,
+    "acc_by_budget": [
+      0.6405,
+      0.6796,
+      0.714,
+      0.776,
+      0.8287,
+      0.9233,
+      1.0
+    ],
+    "rare_recall_by_budget": [
+      0.5547,
+      0.6007,
+      0.6426,
+      0.7128,
+      0.7865,
+      0.9176,
+      1.0
+    ],
+    "n_classes": 11
+  },
+  "full_5736": {
+    "n_train": 5736,
+    "accuracy": 0.6112,
+    "macro_f1": 0.2696,
+    "auc_acc_budget": 0.8628,
+    "auc_rare_budget": 0.8645,
+    "auc_acc_budget_b30": 0.215,
+    "auc_rare_budget_b30": 0.2149,
+    "acc_by_budget": [
+      0.6112,
+      0.6504,
+      0.6868,
+      0.7525,
+      0.8094,
+      0.9052,
+      1.0
+    ],
+    "rare_recall_by_budget": [
+      0.6284,
+      0.6554,
+      0.6919,
+      0.7446,
+      0.8014,
+      0.9128,
+      1.0
+    ],
+    "n_classes": 19
+  },
+  "class_coverage_note": "seed_only model: 11 classes (Wakayama+Shizuoka video); full model: 19 classes (adds 8 Mie-only species: その他/キジバト/キツネ/テン/トラツグミ/ネコ/ヤマガラ/鳥類). Eval set has 18 classes; 66/6906 (1.0%) samples have labels unseen by seed-only model. Mie stills provide class diversity but introduce domain shift from Mie→Wakayama/Shizuoka.",
+  "delta_full_minus_seed_only": {
+    "delta_accuracy": -0.0293,
+    "delta_macro_f1": 0.0169,
+    "delta_auc_acc": -0.0158,
+    "delta_auc_rare": 0.012,
+    "delta_auc_acc_b30": -0.0076,
+    "note": "Positive = full (5736) outperforms seed_only (1000). Note: seed_only may show higher raw accuracy if Mie still domain shift hurts Wakayama/Shizuoka eval; macro-F1 reflects class coverage gain."
+  },
+  "run_timestamp": "2026-07-11T16:33:45",
+  "elapsed_s": 0.2
+}

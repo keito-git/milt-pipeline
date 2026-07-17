@@ -1,0 +1,78 @@
+{
+  "experiment": "B2_rare_recall_by_band",
+  "n_eval_seed_out": 6906,
+  "n_rare_seedout": 1480,
+  "n_rare_correct_overall": 930,
+  "rare_recall_overall": 0.6284,
+  "rare_definition": "true label not in COMMON and not '誤検出(動物なし)'",
+  "COMMON_species": [
+    "イノシシ",
+    "タヌキ",
+    "ニホンザル",
+    "ニホンジカ",
+    "ニホンノウサギ"
+  ],
+  "confidence_threshold_highconf": 0.9,
+  "bands": [
+    {
+      "band": "[0.0,0.5)",
+      "n_all_in_band": 2784,
+      "n_rare_in_band": 657,
+      "n_rare_correct_in_band": 312,
+      "rare_recall_in_band": 0.4749,
+      "wilson95_rare_recall": [
+        0.437,
+        0.5131
+      ],
+      "n_rare_highconf_misclass_in_band": 0
+    },
+    {
+      "band": "[0.5,0.7)",
+      "n_all_in_band": 1801,
+      "n_rare_in_band": 461,
+      "n_rare_correct_in_band": 306,
+      "rare_recall_in_band": 0.6638,
+      "wilson95_rare_recall": [
+        0.6195,
+        0.7054
+      ],
+      "n_rare_highconf_misclass_in_band": 0
+    },
+    {
+      "band": "[0.7,0.9)",
+      "n_all_in_band": 1850,
+      "n_rare_in_band": 355,
+      "n_rare_correct_in_band": 306,
+      "rare_recall_in_band": 0.862,
+      "wilson95_rare_recall": [
+        0.8222,
+        0.894
+      ],
+      "n_rare_highconf_misclass_in_band": 0
+    },
+    {
+      "band": "[0.9,1.01)",
+      "n_all_in_band": 471,
+      "n_rare_in_band": 7,
+      "n_rare_correct_in_band": 6,
+      "rare_recall_in_band": 0.8571,
+      "wilson95_rare_recall": [
+        0.4869,
+        0.9743
+      ],
+      "n_rare_highconf_misclass_in_band": 1
+    }
+  ],
+  "high_confidence_rare_misclassifications": {
+    "threshold": 0.9,
+    "n_total": 1,
+    "examples": [
+      {
+        "index": 2758,
+        "true": "不明",
+        "pred": "ニホンザル",
+        "conf": 0.9096
+      }
+    ]
+  }
+}

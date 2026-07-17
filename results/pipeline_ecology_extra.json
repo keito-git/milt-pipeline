@@ -1,0 +1,33 @@
+{
+  "ecology_by_budget": {
+    "0": {
+      "shannon_abs_err": 0.293,
+      "spearman_rank": 0.639
+    },
+    "30": {
+      "shannon_abs_err": 0.108,
+      "spearman_rank": 0.822
+    },
+    "50": {
+      "shannon_abs_err": 0.035,
+      "spearman_rank": 0.929
+    }
+  },
+  "n_by_habitat": {
+    "pond": 229,
+    "broadnaka": 986,
+    "broadue": 1407,
+    "hatake": 942,
+    "other": 2146,
+    "broadsita": 411,
+    "ceymor": 83,
+    "conifer": 702
+  },
+  "auc_gap_confidence_minus_random": {
+    "mean": 0.0572,
+    "ci95": [
+      0.0544,
+      0.0604
+    ]
+  }
+}

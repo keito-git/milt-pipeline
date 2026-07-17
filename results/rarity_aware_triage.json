@@ -1,0 +1,739 @@
+{
+  "_meta": {
+    "description": "RAU: Rarity-Aware Uncertainty triage. Combines softmax uncertainty with label-free kNN rarity in BioCLIP space.",
+    "env": {
+      "script": "/Users/ishitatakashishou/trailcam_bench/rarity_aware_triage.py",
+      "python": "3.11.3 (v3.11.3:f3909b8bc8, Apr  4 2023, 20:12:10) [Clang 13.0.0 (clang-1300.0.29.30)]",
+      "numpy": "2.4.6",
+      "sklearn": "1.9.0",
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "hostname": "MacBook-Pro-2.local",
+      "cuda_visible_devices": "",
+      "started": "2026-07-11T17:24:27"
+    },
+    "status": "complete",
+    "finished": "2026-07-11T17:25:16",
+    "elapsed_s": 49.3
+  },
+  "data_info": {
+    "n_eval": 6906,
+    "n_rare": 1480,
+    "n_train": 5736,
+    "n_classes": 19,
+    "base_acc": 0.6112076455256299,
+    "budgets": [
+      0,
+      5,
+      10,
+      20,
+      30,
+      50,
+      100
+    ],
+    "budgets_partial_b30": [
+      0,
+      5,
+      10,
+      20,
+      30
+    ],
+    "data_hashes": {
+      "embeddings.npy": "eb0d5091fccfc3915433863480f085f4ac7ce1a61fa428012d5fff83baadbb65",
+      "video_embeddings.npy": "49edabeb4e2bedc4969958299a9212c5d20c2978b2261a0790df0a2f1c3b3d67",
+      "seed_labels.json": "13b61d7e498993a41e839bc136f31ca68b531d330917d5ded3adac067572783f",
+      "labels_video_v1.json": "2c8cb48e273fa1a2364ed4e8f56f8555bee866a4b626ab7a10e45dc66c72f769",
+      "labels_still_v1.json": "e5b86844453c03aa10abaa21de7dbbc4aa5cd7478a45ffb27d915258409d5920",
+      "provisional_labels.json": "178288db5c15a95a2075cb3c245f49268f2cda322a6feb17166fa107280cfbe3",
+      "seed_crops.json": "d0008677f1565921cb7892d4f687f883f32167a43d8400549d0c9c6b18d4b519"
+    }
+  },
+  "rarity_stats": {
+    "10": {
+      "k": 10,
+      "mean": 0.6454,
+      "std": 0.118,
+      "min": 0.3452,
+      "max": 1.1025
+    },
+    "5": {
+      "k": 5,
+      "mean": 0.6098,
+      "std": 0.1244,
+      "min": 0.1882,
+      "max": 1.0919
+    },
+    "20": {
+      "k": 20,
+      "mean": 0.6799,
+      "std": 0.1152,
+      "min": 0.4019,
+      "max": 1.1145
+    }
+  },
+  "rau_grid": {
+    "10": {
+      "0.0": {
+        "lambda": 0.0,
+        "k": 10,
+        "auc_acc_budget": 0.8628,
+        "rare_recall_auc": 0.8645,
+        "auc_acc_budget_b30": 0.215,
+        "rare_recall_auc_b30": 0.2149,
+        "acc_by_budget": [
+          0.6112,
+          0.6504,
+          0.6868,
+          0.7525,
+          0.8094,
+          0.9052,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6554,
+          0.6919,
+          0.7446,
+          0.8014,
+          0.9128,
+          1.0
+        ]
+      },
+      "0.25": {
+        "lambda": 0.25,
+        "k": 10,
+        "auc_acc_budget": 0.8637,
+        "rare_recall_auc": 0.8719,
+        "auc_acc_budget_b30": 0.2146,
+        "rare_recall_auc_b30": 0.2165,
+        "acc_by_budget": [
+          0.6112,
+          0.6496,
+          0.6849,
+          0.7502,
+          0.8089,
+          0.9091,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6574,
+          0.6912,
+          0.7534,
+          0.8142,
+          0.9257,
+          1.0
+        ]
+      },
+      "0.5": {
+        "lambda": 0.5,
+        "k": 10,
+        "auc_acc_budget": 0.8616,
+        "rare_recall_auc": 0.8803,
+        "auc_acc_budget_b30": 0.2133,
+        "rare_recall_auc_b30": 0.2193,
+        "acc_by_budget": [
+          0.6112,
+          0.6451,
+          0.679,
+          0.7457,
+          0.8055,
+          0.9078,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6662,
+          0.6966,
+          0.7642,
+          0.8324,
+          0.9365,
+          1.0
+        ]
+      },
+      "0.75": {
+        "lambda": 0.75,
+        "k": 10,
+        "auc_acc_budget": 0.8487,
+        "rare_recall_auc": 0.8803,
+        "auc_acc_budget_b30": 0.2103,
+        "rare_recall_auc_b30": 0.221,
+        "acc_by_budget": [
+          0.6112,
+          0.6422,
+          0.6727,
+          0.7314,
+          0.7873,
+          0.8847,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.673,
+          0.7108,
+          0.7682,
+          0.8297,
+          0.9324,
+          1.0
+        ]
+      },
+      "1.0": {
+        "lambda": 1.0,
+        "k": 10,
+        "auc_acc_budget": 0.827,
+        "rare_recall_auc": 0.8649,
+        "auc_acc_budget_b30": 0.2059,
+        "rare_recall_auc_b30": 0.2197,
+        "acc_by_budget": [
+          0.6112,
+          0.6387,
+          0.6649,
+          0.7104,
+          0.7563,
+          0.8442,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6736,
+          0.7088,
+          0.7642,
+          0.8142,
+          0.8966,
+          1.0
+        ]
+      }
+    },
+    "5": {
+      "0.0": {
+        "lambda": 0.0,
+        "k": 5,
+        "auc_acc_budget": 0.8628,
+        "rare_recall_auc": 0.8645,
+        "auc_acc_budget_b30": 0.215,
+        "rare_recall_auc_b30": 0.2149,
+        "acc_by_budget": [
+          0.6112,
+          0.6504,
+          0.6868,
+          0.7525,
+          0.8094,
+          0.9052,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6554,
+          0.6919,
+          0.7446,
+          0.8014,
+          0.9128,
+          1.0
+        ]
+      },
+      "0.25": {
+        "lambda": 0.25,
+        "k": 5,
+        "auc_acc_budget": 0.8631,
+        "rare_recall_auc": 0.8704,
+        "auc_acc_budget_b30": 0.2146,
+        "rare_recall_auc_b30": 0.2158,
+        "acc_by_budget": [
+          0.6112,
+          0.6499,
+          0.6855,
+          0.7499,
+          0.8086,
+          0.9076,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6561,
+          0.6899,
+          0.7507,
+          0.8101,
+          0.9243,
+          1.0
+        ]
+      },
+      "0.5": {
+        "lambda": 0.5,
+        "k": 5,
+        "auc_acc_budget": 0.8618,
+        "rare_recall_auc": 0.8786,
+        "auc_acc_budget_b30": 0.2136,
+        "rare_recall_auc_b30": 0.2184,
+        "acc_by_budget": [
+          0.6112,
+          0.6465,
+          0.6809,
+          0.7459,
+          0.8064,
+          0.9073,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6649,
+          0.6959,
+          0.7601,
+          0.8243,
+          0.9365,
+          1.0
+        ]
+      },
+      "0.75": {
+        "lambda": 0.75,
+        "k": 5,
+        "auc_acc_budget": 0.8521,
+        "rare_recall_auc": 0.8822,
+        "auc_acc_budget_b30": 0.211,
+        "rare_recall_auc_b30": 0.2205,
+        "acc_by_budget": [
+          0.6112,
+          0.6432,
+          0.6745,
+          0.7339,
+          0.7915,
+          0.8914,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6716,
+          0.7088,
+          0.7662,
+          0.8277,
+          0.9399,
+          1.0
+        ]
+      },
+      "1.0": {
+        "lambda": 1.0,
+        "k": 5,
+        "auc_acc_budget": 0.8293,
+        "rare_recall_auc": 0.8672,
+        "auc_acc_budget_b30": 0.2066,
+        "rare_recall_auc_b30": 0.2198,
+        "acc_by_budget": [
+          0.6112,
+          0.6392,
+          0.6655,
+          0.713,
+          0.7627,
+          0.8471,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6703,
+          0.7047,
+          0.7682,
+          0.8189,
+          0.9014,
+          1.0
+        ]
+      }
+    },
+    "20": {
+      "0.0": {
+        "lambda": 0.0,
+        "k": 20,
+        "auc_acc_budget": 0.8628,
+        "rare_recall_auc": 0.8645,
+        "auc_acc_budget_b30": 0.215,
+        "rare_recall_auc_b30": 0.2149,
+        "acc_by_budget": [
+          0.6112,
+          0.6504,
+          0.6868,
+          0.7525,
+          0.8094,
+          0.9052,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6554,
+          0.6919,
+          0.7446,
+          0.8014,
+          0.9128,
+          1.0
+        ]
+      },
+      "0.25": {
+        "lambda": 0.25,
+        "k": 20,
+        "auc_acc_budget": 0.8636,
+        "rare_recall_auc": 0.8726,
+        "auc_acc_budget_b30": 0.2145,
+        "rare_recall_auc_b30": 0.2166,
+        "acc_by_budget": [
+          0.6112,
+          0.6497,
+          0.6843,
+          0.7502,
+          0.8086,
+          0.9091,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6568,
+          0.6919,
+          0.7527,
+          0.8176,
+          0.9264,
+          1.0
+        ]
+      },
+      "0.5": {
+        "lambda": 0.5,
+        "k": 20,
+        "auc_acc_budget": 0.8615,
+        "rare_recall_auc": 0.8809,
+        "auc_acc_budget_b30": 0.2132,
+        "rare_recall_auc_b30": 0.2197,
+        "acc_by_budget": [
+          0.6112,
+          0.6442,
+          0.6794,
+          0.7441,
+          0.8063,
+          0.9076,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6649,
+          0.7014,
+          0.7655,
+          0.8318,
+          0.9372,
+          1.0
+        ]
+      },
+      "0.75": {
+        "lambda": 0.75,
+        "k": 20,
+        "auc_acc_budget": 0.8486,
+        "rare_recall_auc": 0.8785,
+        "auc_acc_budget_b30": 0.21,
+        "rare_recall_auc_b30": 0.221,
+        "acc_by_budget": [
+          0.6112,
+          0.6418,
+          0.6723,
+          0.7295,
+          0.786,
+          0.8855,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.677,
+          0.7108,
+          0.7689,
+          0.8257,
+          0.9284,
+          1.0
+        ]
+      },
+      "1.0": {
+        "lambda": 1.0,
+        "k": 20,
+        "auc_acc_budget": 0.8261,
+        "rare_recall_auc": 0.8659,
+        "auc_acc_budget_b30": 0.2058,
+        "rare_recall_auc_b30": 0.2196,
+        "acc_by_budget": [
+          0.6112,
+          0.6396,
+          0.6639,
+          0.7098,
+          0.7554,
+          0.842,
+          1.0
+        ],
+        "rare_recall_by_budget": [
+          0.6284,
+          0.6784,
+          0.7061,
+          0.7655,
+          0.8101,
+          0.9007,
+          1.0
+        ]
+      }
+    }
+  },
+  "baselines": {
+    "confidence": {
+      "auc_acc_budget": 0.8628,
+      "rare_recall_auc": 0.8645,
+      "auc_acc_budget_b30": 0.215,
+      "rare_recall_auc_b30": 0.2149,
+      "acc_by_budget": [
+        0.6112,
+        0.6504,
+        0.6868,
+        0.7525,
+        0.8094,
+        0.9052,
+        1.0
+      ],
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6554,
+        0.6919,
+        0.7446,
+        0.8014,
+        0.9128,
+        1.0
+      ]
+    },
+    "entropy": {
+      "auc_acc_budget": 0.8592,
+      "rare_recall_auc": 0.8603,
+      "auc_acc_budget_b30": 0.2139,
+      "rare_recall_auc_b30": 0.215,
+      "acc_by_budget": [
+        0.6112,
+        0.6502,
+        0.6835,
+        0.7472,
+        0.8034,
+        0.8999,
+        1.0
+      ],
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6628,
+        0.6919,
+        0.7453,
+        0.7953,
+        0.902,
+        1.0
+      ]
+    },
+    "margin": {
+      "auc_acc_budget": 0.8602,
+      "rare_recall_auc": 0.8645,
+      "auc_acc_budget_b30": 0.2136,
+      "rare_recall_auc_b30": 0.2154,
+      "acc_by_budget": [
+        0.6112,
+        0.6449,
+        0.6803,
+        0.748,
+        0.8054,
+        0.9028,
+        1.0
+      ],
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6568,
+        0.6872,
+        0.7507,
+        0.8041,
+        0.9108,
+        1.0
+      ]
+    },
+    "badge_approx_pca20": {
+      "auc_acc_budget": 0.856,
+      "rare_recall_auc": 0.869,
+      "auc_acc_budget_b30": 0.2126,
+      "rare_recall_auc_b30": 0.2177,
+      "acc_by_budget": [
+        0.6112,
+        0.6465,
+        0.6807,
+        0.7409,
+        0.7971,
+        0.8962,
+        1.0
+      ],
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6649,
+        0.6939,
+        0.7601,
+        0.8135,
+        0.9142,
+        1.0
+      ]
+    },
+    "badge_full_dim_reference": {
+      "source": "badge_pca_sensitivity.json (not recomputed here)",
+      "pca_components": null,
+      "gradient_embedding_dim": 9728,
+      "auc_acc_budget": 0.8589,
+      "rare_recall_auc": 0.8749,
+      "auc_acc_budget_b30": 0.2131,
+      "confidence_auc_acc_from_badge_script": 0.8628
+    }
+  },
+  "best_lambda_selection": {
+    "k_primary": 10,
+    "best_lambda": 0.5,
+    "best_rare_recall_auc": 0.8803,
+    "best_auc_acc": 0.8616,
+    "selection_criterion": "Maximize rare_recall_auc subject to auc_acc >= confidence_auc_acc - 0.005 (= 0.8578)",
+    "caution": "Best lambda selected on the SAME eval set used for all baselines. This is consistent with how baselines are evaluated but is NOT a held-out test. Lambda grid results should be interpreted as exploratory; the optimal lambda may not transfer to new datasets."
+  },
+  "statistical_tests": {
+    "permutation_test_vs_random": {
+      "method": "rare_recall_AUC",
+      "n_shuffles": 10000,
+      "rau_rare_auc": 0.8803,
+      "rand_mean": 0.8142,
+      "rand_std": 0.004,
+      "n_exceed": 0,
+      "p_value": 0.0001,
+      "formula": "(n_exceed+1)/(N_PERM+1) [Phipson & Smyth 2010]",
+      "significant_at_alpha05": true
+    },
+    "bootstrap_ci_vs_confidence": {
+      "label_a": "RAU(lambda=0.5,k=10)",
+      "label_b": "confidence",
+      "mean_gap_rare_auc": 0.0154,
+      "ci95": [
+        0.0102,
+        0.0208
+      ],
+      "n_bootstrap": 500,
+      "significance_at_alpha05": true,
+      "interpretation": "Bootstrap CI on rare_recall_AUC(RAU(lambda=0.5,k=10)) - rare_recall_AUC(confidence). Positive gap = RAU(lambda=0.5,k=10) achieves higher rare recall AUC. significant at alpha=0.05."
+    },
+    "bootstrap_ci_vs_badge_approx_pca20": {
+      "label_a": "RAU(lambda=0.5,k=10)",
+      "label_b": "badge_approx_pca20",
+      "mean_gap_rare_auc": 0.0109,
+      "ci95": [
+        0.0048,
+        0.017
+      ],
+      "n_bootstrap": 500,
+      "significance_at_alpha05": true,
+      "interpretation": "Bootstrap CI on rare_recall_AUC(RAU(lambda=0.5,k=10)) - rare_recall_AUC(badge_approx_pca20). Positive gap = RAU(lambda=0.5,k=10) achieves higher rare recall AUC. significant at alpha=0.05."
+    },
+    "random_baseline_rare_auc": {
+      "n_shuffles": 2000,
+      "mean": 0.8144,
+      "std": 0.0041
+    }
+  },
+  "second_site_generalization": {
+    "description": "Generalization check: Mie stills with seed-only LR (trained on n=1000 seed video crops, no Mie stills). RAU lambda=0.5, k=10.",
+    "eval_site": "三重県 (Mie) still photos (labels_still_v1.json)",
+    "n_mie": 4736,
+    "n_rare_mie": 195,
+    "n_classes_seed_model": 11,
+    "classes_seed_model": [
+      "アライグマ",
+      "イノシシ",
+      "コジュケイ",
+      "タヌキ",
+      "ニホンアナグマ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "ハクビシン",
+      "不明",
+      "誤検出(動物なし)"
+    ],
+    "n_classes_missing": 8,
+    "classes_missing_from_seed": [
+      "その他",
+      "キジバト",
+      "キツネ",
+      "テン",
+      "トラツグミ",
+      "ネコ",
+      "ヤマガラ",
+      "鳥類"
+    ],
+    "base_accuracy_mie": 0.6419,
+    "rau": {
+      "lambda": 0.5,
+      "k": 10,
+      "auc_acc_budget": 0.8687,
+      "rare_recall_auc": 0.8305
+    },
+    "confidence": {
+      "auc_acc_budget": 0.8637,
+      "rare_recall_auc": 0.7181
+    },
+    "random_baseline_rare_auc": {
+      "n_shuffles": 500,
+      "mean": 0.5811,
+      "std": 0.0176
+    },
+    "rare_auc_gap_rau_minus_confidence": 0.1124,
+    "elapsed_s": 0.4
+  },
+  "summary_table": [
+    {
+      "method": "RAU(lambda=0.0,k=10)",
+      "auc_acc": 0.8628,
+      "rare_recall_auc": 0.8645,
+      "note": ""
+    },
+    {
+      "method": "RAU(lambda=0.25,k=10)",
+      "auc_acc": 0.8637,
+      "rare_recall_auc": 0.8719,
+      "note": ""
+    },
+    {
+      "method": "RAU(lambda=0.5,k=10)",
+      "auc_acc": 0.8616,
+      "rare_recall_auc": 0.8803,
+      "note": "← BEST"
+    },
+    {
+      "method": "RAU(lambda=0.75,k=10)",
+      "auc_acc": 0.8487,
+      "rare_recall_auc": 0.8803,
+      "note": ""
+    },
+    {
+      "method": "RAU(lambda=1.0,k=10)",
+      "auc_acc": 0.827,
+      "rare_recall_auc": 0.8649,
+      "note": ""
+    },
+    {
+      "method": "confidence",
+      "auc_acc": 0.8628,
+      "rare_recall_auc": 0.8645,
+      "note": ""
+    },
+    {
+      "method": "entropy",
+      "auc_acc": 0.8592,
+      "rare_recall_auc": 0.8603,
+      "note": ""
+    },
+    {
+      "method": "margin",
+      "auc_acc": 0.8602,
+      "rare_recall_auc": 0.8645,
+      "note": ""
+    },
+    {
+      "method": "badge_approx_pca20",
+      "auc_acc": 0.856,
+      "rare_recall_auc": 0.869,
+      "note": ""
+    },
+    {
+      "method": "BADGE_full_dim (ref)",
+      "auc_acc": 0.8589,
+      "rare_recall_auc": 0.8749,
+      "note": "stored, not recomputed"
+    }
+  ]
+}

@@ -1,0 +1,258 @@
+{
+  "data_info": {
+    "dataset": "iWildCam (WILDS)",
+    "dataset_url": "https://wilds.stanford.edu/datasets/",
+    "citation": "Koh et al., NeurIPS 2021 (WILDS benchmark)",
+    "smoke_test": false,
+    "backbone": "bioclip",
+    "emb_dim": 512,
+    "n_train": 1000,
+    "n_eval": 6468,
+    "n_classes": 20,
+    "top_k_species": 20,
+    "top_k_common": 5,
+    "n_seed_per_class": 50,
+    "n_eval_max": 8000,
+    "classes": [
+      "1",
+      "116",
+      "145",
+      "146",
+      "147",
+      "148",
+      "149",
+      "15",
+      "153",
+      "2",
+      "24",
+      "32",
+      "33",
+      "36",
+      "4",
+      "47",
+      "48",
+      "52",
+      "8",
+      "89"
+    ],
+    "common_names": [
+      "1",
+      "116",
+      "146",
+      "147",
+      "36"
+    ],
+    "rare_def": "species not in top-5 by global count (across all WILDS splits — not derived from train split)",
+    "n_rare_eval": 4866,
+    "base_accuracy": 0.6241,
+    "eval_split": "OOD test (different camera locations from train)",
+    "species_counts_eval": {
+      "146": 400,
+      "147": 400,
+      "36": 400,
+      "116": 400,
+      "1": 2,
+      "2": 400,
+      "8": 400,
+      "145": 400,
+      "24": 400,
+      "4": 400,
+      "15": 400,
+      "153": 200,
+      "32": 400,
+      "52": 400,
+      "149": 400,
+      "148": 260,
+      "48": 229,
+      "33": 171,
+      "89": 210,
+      "47": 196
+    },
+    "data_hashes": {
+      "seed_indices_sha256_prefix": "bbd2e1e90adca019",
+      "eval_indices_sha256_prefix": "90ac104bed174008",
+      "wilds_root": "/root/trailcam_ext/data",
+      "dataset": "iwildcam"
+    }
+  },
+  "confidence_vs_random_perm": {
+    "n_shuffles": 10000,
+    "n_exceed": 0,
+    "p_value": 0.0001,
+    "formula": "(n_exceed+1)/(N_PERM+1) [Phipson & Smyth 2010]"
+  },
+  "bootstrap_auc_gap_confidence_minus": {
+    "coreset": {
+      "mean_gap": 0.0928,
+      "ci95": [
+        0.0888,
+        0.0968
+      ],
+      "n_bootstrap": 500,
+      "note": "Bootstrap CI on AUC(A)-AUC(B). Positive gap = A achieves higher AUC. CI excludes 0 => significant at alpha=0.05."
+    },
+    "badge_approx": {
+      "mean_gap": 0.0694,
+      "ci95": [
+        0.0655,
+        0.0729
+      ],
+      "n_bootstrap": 500,
+      "note": "Bootstrap CI on AUC(A)-AUC(B). Positive gap = A achieves higher AUC. CI excludes 0 => significant at alpha=0.05."
+    }
+  },
+  "orders": {
+    "confidence": {
+      "acc_by_budget": [
+        0.6241,
+        0.6647,
+        0.7049,
+        0.7826,
+        0.8437,
+        0.9447,
+        1.0
+      ],
+      "auc_acc_budget": 0.8871,
+      "rare_recall_by_budget": [
+        0.5826,
+        0.6274,
+        0.6737,
+        0.7571,
+        0.8233,
+        0.9429,
+        1.0
+      ],
+      "rare_recall_auc": 0.8757
+    },
+    "entropy": {
+      "acc_by_budget": [
+        0.6241,
+        0.6568,
+        0.6888,
+        0.7553,
+        0.8173,
+        0.9133,
+        1.0
+      ],
+      "auc_acc_budget": 0.8679,
+      "rare_recall_by_budget": [
+        0.5826,
+        0.6202,
+        0.6568,
+        0.7271,
+        0.7894,
+        0.9051,
+        1.0
+      ],
+      "rare_recall_auc": 0.8527
+    },
+    "margin": {
+      "acc_by_budget": [
+        0.6241,
+        0.6654,
+        0.7044,
+        0.7777,
+        0.8432,
+        0.9459,
+        1.0
+      ],
+      "auc_acc_budget": 0.887,
+      "rare_recall_by_budget": [
+        0.5826,
+        0.6301,
+        0.6734,
+        0.7544,
+        0.8247,
+        0.939,
+        1.0
+      ],
+      "rare_recall_auc": 0.8744
+    },
+    "coreset": {
+      "acc_by_budget": [
+        0.6241,
+        0.6447,
+        0.6633,
+        0.6948,
+        0.7203,
+        0.7695,
+        1.0
+      ],
+      "auc_acc_budget": 0.7944,
+      "rare_recall_by_budget": [
+        0.5826,
+        0.6044,
+        0.6235,
+        0.6537,
+        0.678,
+        0.7283,
+        1.0
+      ],
+      "rare_recall_auc": 0.7635
+    },
+    "badge_approx": {
+      "acc_by_budget": [
+        0.6241,
+        0.6545,
+        0.6775,
+        0.7195,
+        0.754,
+        0.8106,
+        1.0
+      ],
+      "auc_acc_budget": 0.8179,
+      "rare_recall_by_budget": [
+        0.5826,
+        0.6171,
+        0.6422,
+        0.6856,
+        0.7176,
+        0.775,
+        1.0
+      ],
+      "rare_recall_auc": 0.791
+    },
+    "random": {
+      "auc_acc_budget": 0.8121,
+      "auc_acc_budget_std": 0.0016,
+      "n_shuffles": 10000
+    }
+  },
+  "budgets_pct": [
+    0,
+    5,
+    10,
+    20,
+    30,
+    50,
+    100
+  ],
+  "note": "E3 External validation — iWildCam (WILDS, OOD test split). Backbone: bioclip. Protocol identical to pipeline_canonical.py: LR(balanced, max_iter=2000, seed=42, float64), BUDGETS=[0, 5, 10, 20, 30, 50, 100], SEED=6906, N_PERM=10000, N_BOOT=500. Subset: top-20 species by global count (all WILDS splits). Common: top-5 species. Rare: remaining 15. Seed: 50 img/class from WILDS train (1000 total). Eval: OOD test, <=N_EVAL_MAX=8000 images. p-value: (n_exceed+1)/(N_PERM+1) [Phipson & Smyth 2010].",
+  "env_log": {
+    "hostname": "doubutu-7cb8f69555-zxrk5",
+    "platform": "Linux-6.8.0-110-generic-x86_64-with-glibc2.35",
+    "python": "3.10.12",
+    "numpy": "1.24.4",
+    "sklearn": "1.2.0",
+    "git_commit": "unavailable",
+    "script": "/root/trailcam_ext/exp_external_iwildcam_ordercomp.py",
+    "run_timestamp": "2026-07-16T07:59:34",
+    "seed_badge": 6906,
+    "seed_perm": 6906,
+    "seed_boot": 6906,
+    "cuda_visible_devices": "",
+    "smoke_test": false,
+    "backbone": "bioclip",
+    "torch": "2.2.0a0+81ea7a4",
+    "elapsed_total_s": 1443.0
+  },
+  "_meta": {
+    "status": "complete",
+    "smoke_test": false,
+    "run_timestamp": "2026-07-16T07:59:34",
+    "elapsed_s": 1443.0,
+    "script": "/root/trailcam_ext/exp_external_iwildcam_ordercomp.py",
+    "description": "E3: External validity. Validates that confidence ordering >= Coreset/BADGE and >> random on iWildCam (OOD test split), independent of SatoyamaCT.",
+    "canonical_reference": "/root/trailcam_ext/outputs/benchmark/pipeline_canonical.json"
+  }
+}

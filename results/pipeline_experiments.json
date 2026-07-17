@@ -1,0 +1,139 @@
+{
+  "n_eval_seed_out": 6906,
+  "n_rare_seedout": 1480,
+  "auto_accuracy_seedout": 0.61,
+  "note": "review->truth is an UPPER BOUND under perfect review; compare ORDERS at fixed budget",
+  "orders": {
+    "confidence": {
+      "acc_by_budget": [
+        0.61,
+        0.65,
+        0.687,
+        0.752,
+        0.809,
+        0.905,
+        1.0
+      ],
+      "auc_acc_budget": 0.8626,
+      "rare_recall_auc": 0.8645
+    },
+    "entropy": {
+      "acc_by_budget": [
+        0.61,
+        0.649,
+        0.683,
+        0.746,
+        0.803,
+        0.9,
+        1.0
+      ],
+      "auc_acc_budget": 0.859,
+      "rare_recall_auc": 0.8601
+    },
+    "margin": {
+      "acc_by_budget": [
+        0.61,
+        0.645,
+        0.68,
+        0.748,
+        0.805,
+        0.902,
+        1.0
+      ],
+      "auc_acc_budget": 0.8598,
+      "rare_recall_auc": 0.8651
+    },
+    "random": {
+      "auc_acc_budget": 0.8053,
+      "auc_std": 0.0016,
+      "rare_recall_auc": 0.8146
+    }
+  },
+  "confidence_vs_random_perm_p": 0.001,
+  "confidence_detail": [
+    {
+      "budget_pct": 0,
+      "accuracy_ub": 0.61,
+      "rare_recall_ub": 0.629,
+      "habitat_TV": 0.263
+    },
+    {
+      "budget_pct": 5,
+      "accuracy_ub": 0.65,
+      "rare_recall_ub": 0.656,
+      "habitat_TV": 0.237
+    },
+    {
+      "budget_pct": 10,
+      "accuracy_ub": 0.687,
+      "rare_recall_ub": 0.693,
+      "habitat_TV": 0.211
+    },
+    {
+      "budget_pct": 20,
+      "accuracy_ub": 0.752,
+      "rare_recall_ub": 0.745,
+      "habitat_TV": 0.165
+    },
+    {
+      "budget_pct": 30,
+      "accuracy_ub": 0.809,
+      "rare_recall_ub": 0.801,
+      "habitat_TV": 0.124
+    },
+    {
+      "budget_pct": 50,
+      "accuracy_ub": 0.905,
+      "rare_recall_ub": 0.913,
+      "habitat_TV": 0.066
+    },
+    {
+      "budget_pct": 100,
+      "accuracy_ub": 1.0,
+      "rare_recall_ub": 1.0,
+      "habitat_TV": 0.0
+    }
+  ],
+  "efficiency_bands": [
+    {
+      "band": "[0.0,0.5)",
+      "n": 2782,
+      "corrected": 1732,
+      "rate": 0.623,
+      "wilson95": [
+        0.604,
+        0.64
+      ]
+    },
+    {
+      "band": "[0.5,0.7)",
+      "n": 1793,
+      "corrected": 706,
+      "rate": 0.394,
+      "wilson95": [
+        0.371,
+        0.417
+      ]
+    },
+    {
+      "band": "[0.7,0.9)",
+      "n": 1856,
+      "corrected": 245,
+      "rate": 0.132,
+      "wilson95": [
+        0.117,
+        0.148
+      ]
+    },
+    {
+      "band": "[0.9,1.01)",
+      "n": 475,
+      "corrected": 7,
+      "rate": 0.015,
+      "wilson95": [
+        0.007,
+        0.03
+      ]
+    }
+  ]
+}

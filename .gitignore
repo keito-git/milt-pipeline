@@ -1,0 +1,19 @@
+# Dataset (download separately: SatoyamaCT on Zenodo/HuggingFace)
+data/
+images/
+*.npy
+*.pkl
+
+# Private location-mapping tables (never in repo)
+../PRIVATE/
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+
+# Editor / OS
+.DS_Store
+*.swp

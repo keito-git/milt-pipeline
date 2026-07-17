@@ -1,0 +1,21 @@
+cff-version: 1.2.0
+message: "If you use this pipeline or code, please cite it as below."
+type: software
+authors:
+  - family-names: Inoshita
+    given-names: Keito
+    affiliation: "Faculty of Business and Commerce, Kansai University, Suita, Osaka, Japan"
+    orcid: "https://orcid.org/0009-0006-6854-7231"
+  - family-names: Nojiri
+    given-names: Kota
+    affiliation: "Graduate School of Agricultural and Life Sciences, The University of Tokyo, Bunkyo, Tokyo, Japan"
+  - family-names: Sugeno
+    given-names: Haruto
+    affiliation: "Faculty of Symbiotic Systems Science, Fukushima University, Fukushima, Japan"
+title: "MiLT: Model-in-the-Loop Uncertainty-aware Labeling and Triage for Night Camera-Trap Data"
+version: 1.0.0
+# NOTE: repository-code (GitHub) is finalized upon acceptance.
+date-released: "2026-01-01"
+license: MIT
+repository-code: "https://github.com/keito-git/milt-pipeline"
+url: "https://github.com/keito-git/milt-pipeline"

@@ -1,0 +1,155 @@
+{
+  "experiment": "B1_B4_al_baselines",
+  "n_eval_seed_out": 6906,
+  "n_rare_seedout": 1480,
+  "budgets_pct": [
+    0,
+    5,
+    10,
+    20,
+    30,
+    50,
+    100
+  ],
+  "note": "Coreset = k-center greedy on BioCLIP embedding space; BADGE_approx = k-center greedy on logistic-regression gradient embedding (PCA-20 projected, K=19 classes → 380-dim); review order = selected first → most informative/diverse first.",
+  "orders": {
+    "confidence": {
+      "acc_by_budget": [
+        0.6112,
+        0.6504,
+        0.6868,
+        0.7525,
+        0.8094,
+        0.9052,
+        1.0
+      ],
+      "auc_acc_budget": 0.8628,
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6554,
+        0.6919,
+        0.7446,
+        0.8014,
+        0.9128,
+        1.0
+      ],
+      "rare_recall_auc": 0.8645
+    },
+    "entropy": {
+      "acc_by_budget": [
+        0.6112,
+        0.6502,
+        0.6835,
+        0.7472,
+        0.8034,
+        0.8999,
+        1.0
+      ],
+      "auc_acc_budget": 0.8592,
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6628,
+        0.6919,
+        0.7453,
+        0.7953,
+        0.902,
+        1.0
+      ],
+      "rare_recall_auc": 0.8603
+    },
+    "margin": {
+      "acc_by_budget": [
+        0.6112,
+        0.6449,
+        0.6803,
+        0.748,
+        0.8054,
+        0.9028,
+        1.0
+      ],
+      "auc_acc_budget": 0.8602,
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6568,
+        0.6872,
+        0.7507,
+        0.8041,
+        0.9108,
+        1.0
+      ],
+      "rare_recall_auc": 0.8645
+    },
+    "coreset": {
+      "acc_by_budget": [
+        0.6112,
+        0.639,
+        0.6642,
+        0.7146,
+        0.7624,
+        0.8425,
+        1.0
+      ],
+      "auc_acc_budget": 0.8277,
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6703,
+        0.7034,
+        0.7669,
+        0.8176,
+        0.8892,
+        1.0
+      ],
+      "rare_recall_auc": 0.8625
+    },
+    "badge_approx": {
+      "acc_by_budget": [
+        0.6112,
+        0.6465,
+        0.6807,
+        0.7409,
+        0.7971,
+        0.8962,
+        1.0
+      ],
+      "auc_acc_budget": 0.856,
+      "rare_recall_by_budget": [
+        0.6284,
+        0.6649,
+        0.6939,
+        0.7601,
+        0.8135,
+        0.9142,
+        1.0
+      ],
+      "rare_recall_auc": 0.869
+    },
+    "random": {
+      "auc_acc_budget": 0.8056,
+      "auc_acc_budget_std": 0.0016,
+      "rare_recall_auc": 0.8144,
+      "rare_recall_auc_std": 0.0041,
+      "n_shuffles": 10000
+    }
+  },
+  "confidence_vs_random_perm_p_10k": 0.0001,
+  "n_shuffles_permutation": 10000,
+  "bootstrap_auc_gap_confidence_minus": {
+    "coreset": {
+      "mean_gap": 0.035,
+      "ci95": [
+        0.0312,
+        0.0388
+      ],
+      "n_bootstrap": 500
+    },
+    "badge_approx": {
+      "mean_gap": 0.0067,
+      "ci95": [
+        0.0047,
+        0.0086
+      ],
+      "n_bootstrap": 500
+    },
+    "note": "Bootstrap CI on AUC(confidence) - AUC(method). Positive gap = confidence ordering achieves higher AUC. CI excludes 0 → difference is significant at alpha=0.05."
+  }
+}

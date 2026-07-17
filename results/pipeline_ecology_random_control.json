@@ -1,0 +1,160 @@
+{
+  "experiment": "B3_ecology_random_control",
+  "n_eval_seed_out": 6906,
+  "budgets_pct": [
+    0,
+    10,
+    20,
+    30,
+    50,
+    100
+  ],
+  "n_eco_shuffles": 2000,
+  "n_habitats_valid": 8,
+  "habitats_valid": [
+    "broadnaka",
+    "broadsita",
+    "broadue",
+    "ceymor",
+    "conifer",
+    "hatake",
+    "other",
+    "pond"
+  ],
+  "n_by_habitat": {
+    "broadue": 1407,
+    "conifer": 702,
+    "broadsita": 411,
+    "other": 2146,
+    "broadnaka": 986,
+    "ceymor": 83,
+    "pond": 229,
+    "hatake": 942
+  },
+  "confidence_order": {
+    "0": {
+      "tv_mean": 0.2619,
+      "shannon_abs_err_mean": 0.289,
+      "spearman_rank_mean": 0.6387
+    },
+    "10": {
+      "tv_mean": 0.2106,
+      "shannon_abs_err_mean": 0.2099,
+      "spearman_rank_mean": 0.7323
+    },
+    "20": {
+      "tv_mean": 0.1634,
+      "shannon_abs_err_mean": 0.1666,
+      "spearman_rank_mean": 0.7708
+    },
+    "30": {
+      "tv_mean": 0.1238,
+      "shannon_abs_err_mean": 0.1071,
+      "spearman_rank_mean": 0.8223
+    },
+    "50": {
+      "tv_mean": 0.065,
+      "shannon_abs_err_mean": 0.0352,
+      "spearman_rank_mean": 0.9292
+    },
+    "100": {
+      "tv_mean": 0.0,
+      "shannon_abs_err_mean": 0.0,
+      "spearman_rank_mean": 1.0
+    }
+  },
+  "random_order": {
+    "0": {
+      "tv_mean": 0.2619,
+      "tv_std": 0.0,
+      "shannon_abs_err_mean": 0.289,
+      "shannon_abs_err_std": 0.0,
+      "spearman_rank_mean": 0.6387,
+      "spearman_rank_std": 0.0
+    },
+    "10": {
+      "tv_mean": 0.2364,
+      "tv_std": 0.0028,
+      "shannon_abs_err_mean": 0.2751,
+      "shannon_abs_err_std": 0.0068,
+      "spearman_rank_mean": 0.6656,
+      "spearman_rank_std": 0.0124
+    },
+    "20": {
+      "tv_mean": 0.2107,
+      "tv_std": 0.0038,
+      "shannon_abs_err_mean": 0.2579,
+      "shannon_abs_err_std": 0.009,
+      "spearman_rank_mean": 0.6951,
+      "spearman_rank_std": 0.0159
+    },
+    "30": {
+      "tv_mean": 0.185,
+      "tv_std": 0.0042,
+      "shannon_abs_err_mean": 0.2386,
+      "shannon_abs_err_std": 0.0102,
+      "spearman_rank_mean": 0.724,
+      "spearman_rank_std": 0.0174
+    },
+    "50": {
+      "tv_mean": 0.1333,
+      "tv_std": 0.0046,
+      "shannon_abs_err_mean": 0.1908,
+      "shannon_abs_err_std": 0.0118,
+      "spearman_rank_mean": 0.7863,
+      "spearman_rank_std": 0.0202
+    },
+    "100": {
+      "tv_mean": 0.0,
+      "tv_std": 0.0,
+      "shannon_abs_err_mean": 0.0,
+      "shannon_abs_err_std": 0.0,
+      "spearman_rank_mean": 1.0,
+      "spearman_rank_std": 0.0
+    }
+  },
+  "permutation_test": {
+    "0": {
+      "tv_p_value": 1.0,
+      "shannon_p_value": 1.0,
+      "spearman_p_value": 1.0,
+      "note_tv_shannon": "p = fraction of random shuffles achieving lower (better) value than confidence ordering",
+      "note_spearman": "p = fraction of random shuffles achieving higher (better) value than confidence ordering"
+    },
+    "10": {
+      "tv_p_value": 0.0005,
+      "shannon_p_value": 0.0005,
+      "spearman_p_value": 0.0005,
+      "note_tv_shannon": "p = fraction of random shuffles achieving lower (better) value than confidence ordering",
+      "note_spearman": "p = fraction of random shuffles achieving higher (better) value than confidence ordering"
+    },
+    "20": {
+      "tv_p_value": 0.0005,
+      "shannon_p_value": 0.0005,
+      "spearman_p_value": 0.0005,
+      "note_tv_shannon": "p = fraction of random shuffles achieving lower (better) value than confidence ordering",
+      "note_spearman": "p = fraction of random shuffles achieving higher (better) value than confidence ordering"
+    },
+    "30": {
+      "tv_p_value": 0.0005,
+      "shannon_p_value": 0.0005,
+      "spearman_p_value": 0.0005,
+      "note_tv_shannon": "p = fraction of random shuffles achieving lower (better) value than confidence ordering",
+      "note_spearman": "p = fraction of random shuffles achieving higher (better) value than confidence ordering"
+    },
+    "50": {
+      "tv_p_value": 0.0005,
+      "shannon_p_value": 0.0005,
+      "spearman_p_value": 0.0005,
+      "note_tv_shannon": "p = fraction of random shuffles achieving lower (better) value than confidence ordering",
+      "note_spearman": "p = fraction of random shuffles achieving higher (better) value than confidence ordering"
+    },
+    "100": {
+      "tv_p_value": 1.0,
+      "shannon_p_value": 1.0,
+      "spearman_p_value": 1.0,
+      "note_tv_shannon": "p = fraction of random shuffles achieving lower (better) value than confidence ordering",
+      "note_spearman": "p = fraction of random shuffles achieving higher (better) value than confidence ordering"
+    }
+  }
+}

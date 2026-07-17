@@ -1,0 +1,303 @@
+{
+  "_meta": {
+    "script": "compute_iaa.py",
+    "date": "2026-07-11",
+    "n_iaa": 1000,
+    "gold_total": 7906,
+    "secondary_total": 1000,
+    "note": "All numbers computed from raw label files. No fabrication."
+  },
+  "overall": {
+    "n_iaa_crops": 1000,
+    "n_agree": 777,
+    "raw_agreement": 0.777,
+    "expected_agreement": 0.2875,
+    "cohen_kappa": 0.687,
+    "kappa_interpretation": "substantial (0.60–0.80)",
+    "n_classes_in_iaa": 13,
+    "classes_in_iaa": [
+      "その他",
+      "アライグマ",
+      "イノシシ",
+      "コジュケイ",
+      "タヌキ",
+      "テン",
+      "ニホンアナグマ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "ハクビシン",
+      "不明",
+      "誤検出(動物なし)"
+    ],
+    "gold_label_distribution": {
+      "ニホンジカ": 440,
+      "不明": 210,
+      "ニホンザル": 88,
+      "誤検出(動物なし)": 86,
+      "イノシシ": 85,
+      "ニホンノウサギ": 60,
+      "コジュケイ": 14,
+      "タヌキ": 6,
+      "テン": 3,
+      "アライグマ": 3,
+      "ニホンアナグマ": 3,
+      "ハクビシン": 1,
+      "その他": 1
+    },
+    "secondary_label_distribution": {
+      "ニホンジカ": 498,
+      "不明": 231,
+      "ニホンザル": 92,
+      "イノシシ": 53,
+      "ニホンノウサギ": 52,
+      "誤検出(動物なし)": 45,
+      "コジュケイ": 14,
+      "タヌキ": 5,
+      "ハクビシン": 5,
+      "アライグマ": 3,
+      "ニホンアナグマ": 2
+    }
+  },
+  "species_only": {
+    "excluded_categories": [
+      "不明",
+      "誤検出(動物なし)"
+    ],
+    "n_pairs": 639,
+    "n_agree": 606,
+    "raw_agreement": 0.9484,
+    "expected_agreement": 0.4848,
+    "cohen_kappa": 0.8998,
+    "kappa_interpretation": "almost perfect (0.80–1.00)"
+  },
+  "stratified": {
+    "by_region": [
+      {
+        "label": "和歌山",
+        "n": 660,
+        "n_agree": 516,
+        "agreement": 0.7818,
+        "expected_agreement": 0.2959,
+        "kappa": 0.6901,
+        "kappa_interpretation": "substantial (0.60–0.80)"
+      },
+      {
+        "label": "静岡",
+        "n": 340,
+        "n_agree": 261,
+        "agreement": 0.7676,
+        "expected_agreement": 0.3044,
+        "kappa": 0.6659,
+        "kappa_interpretation": "substantial (0.60–0.80)"
+      }
+    ],
+    "by_ir": [
+      {
+        "label": "IR=True",
+        "n": 637,
+        "n_agree": 492,
+        "agreement": 0.7724,
+        "expected_agreement": 0.3581,
+        "kappa": 0.6454,
+        "kappa_interpretation": "substantial (0.60–0.80)"
+      },
+      {
+        "label": "IR=False",
+        "n": 363,
+        "n_agree": 285,
+        "agreement": 0.7851,
+        "expected_agreement": 0.2321,
+        "kappa": 0.7202,
+        "kappa_interpretation": "substantial (0.60–0.80)"
+      }
+    ],
+    "by_site": [
+      {
+        "label": "和歌山:broadnaka",
+        "n": 132,
+        "n_agree": 99,
+        "agreement": 0.75,
+        "expected_agreement": 0.2659,
+        "kappa": 0.6594,
+        "kappa_interpretation": "substantial (0.60–0.80)"
+      },
+      {
+        "label": "和歌山:broadsita",
+        "n": 60,
+        "n_agree": 45,
+        "agreement": 0.75,
+        "expected_agreement": 0.415,
+        "kappa": 0.5726,
+        "kappa_interpretation": "moderate (0.40–0.60)"
+      },
+      {
+        "label": "和歌山:broadue",
+        "n": 196,
+        "n_agree": 160,
+        "agreement": 0.8163,
+        "expected_agreement": 0.3776,
+        "kappa": 0.7049,
+        "kappa_interpretation": "substantial (0.60–0.80)"
+      },
+      {
+        "label": "和歌山:ceymor",
+        "n": 8,
+        "n_agree": 7,
+        "agreement": 0.875,
+        "expected_agreement": 0.7656,
+        "kappa": 0.4667,
+        "kappa_interpretation": "moderate (0.40–0.60)"
+      },
+      {
+        "label": "和歌山:conifer",
+        "n": 114,
+        "n_agree": 91,
+        "agreement": 0.7982,
+        "expected_agreement": 0.3435,
+        "kappa": 0.6927,
+        "kappa_interpretation": "substantial (0.60–0.80)"
+      },
+      {
+        "label": "和歌山:hatake",
+        "n": 113,
+        "n_agree": 81,
+        "agreement": 0.7168,
+        "expected_agreement": 0.5308,
+        "kappa": 0.3964,
+        "kappa_interpretation": "fair (0.20–0.40)"
+      },
+      {
+        "label": "和歌山:other",
+        "n": 8,
+        "n_agree": 8,
+        "agreement": 1.0,
+        "expected_agreement": 0.7812,
+        "kappa": 1.0,
+        "kappa_interpretation": "almost perfect (0.80–1.00)"
+      },
+      {
+        "label": "和歌山:pond",
+        "n": 29,
+        "n_agree": 25,
+        "agreement": 0.8621,
+        "expected_agreement": 0.679,
+        "kappa": 0.5704,
+        "kappa_interpretation": "moderate (0.40–0.60)"
+      },
+      {
+        "label": "静岡:other",
+        "n": 340,
+        "n_agree": 261,
+        "agreement": 0.7676,
+        "expected_agreement": 0.3044,
+        "kappa": 0.6659,
+        "kappa_interpretation": "substantial (0.60–0.80)"
+      }
+    ],
+    "worst_condition": {
+      "label": "和歌山:hatake",
+      "n": 113,
+      "n_agree": 81,
+      "agreement": 0.7168,
+      "expected_agreement": 0.5308,
+      "kappa": 0.3964,
+      "kappa_interpretation": "fair (0.20–0.40)"
+    },
+    "best_condition": {
+      "label": "和歌山:other",
+      "n": 8,
+      "n_agree": 8,
+      "agreement": 1.0,
+      "expected_agreement": 0.7812,
+      "kappa": 1.0,
+      "kappa_interpretation": "almost perfect (0.80–1.00)"
+    }
+  },
+  "confusion_patterns": {
+    "n_mismatch": 223,
+    "n_mismatch_involving_non_species": 190,
+    "pct_mismatch_involving_non_species": 85.2,
+    "top10_mismatch_pairs": [
+      {
+        "gold_label": "不明",
+        "secondary_label": "ニホンジカ",
+        "count": 50,
+        "involves_non_species": true
+      },
+      {
+        "gold_label": "誤検出(動物なし)",
+        "secondary_label": "不明",
+        "count": 37,
+        "involves_non_species": true
+      },
+      {
+        "gold_label": "イノシシ",
+        "secondary_label": "ニホンジカ",
+        "count": 20,
+        "involves_non_species": false
+      },
+      {
+        "gold_label": "ニホンジカ",
+        "secondary_label": "不明",
+        "count": 18,
+        "involves_non_species": true
+      },
+      {
+        "gold_label": "不明",
+        "secondary_label": "ニホンザル",
+        "count": 18,
+        "involves_non_species": true
+      },
+      {
+        "gold_label": "イノシシ",
+        "secondary_label": "不明",
+        "count": 16,
+        "involves_non_species": true
+      },
+      {
+        "gold_label": "ニホンザル",
+        "secondary_label": "不明",
+        "count": 14,
+        "involves_non_species": true
+      },
+      {
+        "gold_label": "ニホンノウサギ",
+        "secondary_label": "不明",
+        "count": 9,
+        "involves_non_species": true
+      },
+      {
+        "gold_label": "誤検出(動物なし)",
+        "secondary_label": "ニホンジカ",
+        "count": 7,
+        "involves_non_species": true
+      },
+      {
+        "gold_label": "タヌキ",
+        "secondary_label": "不明",
+        "count": 4,
+        "involves_non_species": true
+      }
+    ]
+  },
+  "high_confidence_band": {
+    "description": "高信頼帯チェック: IAAクロップ集合(1000件)はseed_cropsと完全一致。パイプラインはこれらを学習データとして使用しているため、同クロップへのin-sample信頼度は循環バイアスを持つ(トレーニングデータへの過信)。一方、パイプラインのeval set(n=6906)に対する信頼度はpipeline_canonical.jsonに記録されているが、secondary annotatorは該当クロップをラベル付けしていないため、IAAを算出する対象クロップが存在しない。したがって、要求された『高信頼帯IAA』は循環バイアスなしには算出不可能。",
+    "seed_crops_equals_iaa_set": true,
+    "seed_crops_count": 1000,
+    "iaa_crops_count": 1000,
+    "seed_iaa_overlap_count": 1000,
+    "can_compute_unbiased_hc_iaa": false,
+    "reason": "IAA crops = seed crops = training data for LR classifier. In-sample predict_proba on training data is known to be overconfident (overfitting). The eval-set high-confidence crops (n=471, c>=0.9) have no secondary-annotator labels.",
+    "alternative_evidence": {
+      "note": "Eval set(非種・非seed, n=6906)の高信頼帯[0.9,1.01)では n=471クロップ中7件のみ修正必要(エラー率1.49%, Wilson 95% CI [0.72%, 3.04%])。これはprimary (gold) annotatorラベルとの一致であり、パイプラインの精度として記録済。secondary annotatorとの比較は設計上不可能。",
+      "hc_band_n": 471,
+      "hc_band_error_rate": 0.0149,
+      "hc_band_wilson95": [
+        0.0072,
+        0.0304
+      ]
+    },
+    "recommendation": "推奨する記述: 'The 1000 seed crops used for IAA served as training data for the LR classifier; therefore, in-sample confidence scores cannot serve as independent validation. Instead, the pipeline was evaluated on held-out crops (n=6906), where the high-confidence band (c≥0.90, n=471) yielded a human-correction rate of 1.49% (95% CI: 0.72–3.04%), consistent with expert-level reliability.'"
+  }
+}

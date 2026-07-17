@@ -1,0 +1,1199 @@
+{
+  "_meta": {
+    "env": {
+      "hostname": "MacBook-Pro-2.local",
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "python": "3.11.3 (v3.11.3:f3909b8bc8, Apr  4 2023, 20:12:10) [Clang 13.0.0 (clang-1300.0.29.30)]",
+      "numpy": "1.26.4",
+      "script": "/Users/ishitatakashishou/trailcam_bench/rare_targeted_acquisition.py",
+      "started": "2026-07-11T20:44:02",
+      "purpose": "RCTA: rare-class prior targeted acquisition vs confidence/RAU/BADGE",
+      "gpu_rule": "CUDA_VISIBLE_DEVICES='' set before any torch import"
+    },
+    "status": "completed",
+    "elapsed_s": 340.7,
+    "finished": "2026-07-11T20:49:43"
+  },
+  "data_info": {
+    "n_eval": 6906,
+    "n_train": 5736,
+    "n_classes": 19,
+    "base_acc": 0.6112,
+    "n_true_rare": 173,
+    "n_unknown": 1307,
+    "n_rare_all": 1480,
+    "train_class_counts": {
+      "タヌキ": 3007,
+      "ニホンジカ": 1952,
+      "不明": 330,
+      "ニホンザル": 94,
+      "イノシシ": 93,
+      "誤検出(動物なし)": 88,
+      "ニホンノウサギ": 52,
+      "キジバト": 42,
+      "トラツグミ": 33,
+      "コジュケイ": 14,
+      "キツネ": 8,
+      "アライグマ": 7,
+      "ハクビシン": 6,
+      "ニホンアナグマ": 3,
+      "その他": 2,
+      "ヤマガラ": 2,
+      "ネコ": 1,
+      "テン": 1,
+      "鳥類": 1
+    },
+    "classes_in_classifier": [
+      "その他",
+      "アライグマ",
+      "イノシシ",
+      "キジバト",
+      "キツネ",
+      "コジュケイ",
+      "タヌキ",
+      "テン",
+      "トラツグミ",
+      "ニホンアナグマ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "ネコ",
+      "ハクビシン",
+      "ヤマガラ",
+      "不明",
+      "誤検出(動物なし)",
+      "鳥類"
+    ],
+    "excluded_from_rare_weight": [
+      "イノシシ",
+      "タヌキ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "不明",
+      "誤検出(動物なし)"
+    ],
+    "consistency_note": "Eval set, classifier, train set are IDENTICAL to rarity_aware_triage.py and rau_true_rare_analysis.py. true_rare_mask: excludes COMMON, 不明, 誤検出. n=173.",
+    "data_hashes": {
+      "embeddings.npy": "eb0d5091fccfc3915433863480f085f4ac7ce1a61fa428012d5fff83baadbb65",
+      "video_embeddings.npy": "49edabeb4e2bedc4969958299a9212c5d20c2978b2261a0790df0a2f1c3b3d67",
+      "seed_labels.json": "13b61d7e498993a41e839bc136f31ca68b531d330917d5ded3adac067572783f",
+      "labels_video_v1.json": "2c8cb48e273fa1a2364ed4e8f56f8555bee866a4b626ab7a10e45dc66c72f769",
+      "labels_still_v1.json": "e5b86844453c03aa10abaa21de7dbbc4aa5cd7478a45ffb27d915258409d5920"
+    }
+  },
+  "weight_vectors": {
+    "binary": {
+      "nonzero_classes": {
+        "その他": 1.0,
+        "アライグマ": 1.0,
+        "キジバト": 1.0,
+        "キツネ": 1.0,
+        "コジュケイ": 1.0,
+        "テン": 1.0,
+        "トラツグミ": 1.0,
+        "ニホンアナグマ": 1.0,
+        "ネコ": 1.0,
+        "ハクビシン": 1.0,
+        "ヤマガラ": 1.0,
+        "鳥類": 1.0
+      },
+      "zero_classes": [
+        "イノシシ",
+        "タヌキ",
+        "ニホンザル",
+        "ニホンジカ",
+        "ニホンノウサギ",
+        "不明",
+        "誤検出(動物なし)"
+      ],
+      "note": "Derived from training label frequency only. No eval gt used."
+    },
+    "inv_freq": {
+      "nonzero_classes": {
+        "その他": 0.5,
+        "アライグマ": 0.1429,
+        "キジバト": 0.0238,
+        "キツネ": 0.125,
+        "コジュケイ": 0.0714,
+        "テン": 1.0,
+        "トラツグミ": 0.0303,
+        "ニホンアナグマ": 0.3333,
+        "ネコ": 1.0,
+        "ハクビシン": 0.1667,
+        "ヤマガラ": 0.5,
+        "鳥類": 1.0
+      },
+      "zero_classes": [
+        "イノシシ",
+        "タヌキ",
+        "ニホンザル",
+        "ニホンジカ",
+        "ニホンノウサギ",
+        "不明",
+        "誤検出(動物なし)"
+      ],
+      "note": "Derived from training label frequency only. No eval gt used."
+    },
+    "log_inv_freq": {
+      "nonzero_classes": {
+        "その他": 0.9199,
+        "アライグマ": 0.7752,
+        "キジバト": 0.5681,
+        "キツネ": 0.7597,
+        "コジュケイ": 0.6951,
+        "テン": 1.0,
+        "トラツグミ": 0.596,
+        "ニホンアナグマ": 0.8731,
+        "ネコ": 1.0,
+        "ハクビシン": 0.793,
+        "ヤマガラ": 0.9199,
+        "鳥類": 1.0
+      },
+      "zero_classes": [
+        "イノシシ",
+        "タヌキ",
+        "ニホンザル",
+        "ニホンジカ",
+        "ニホンノウサギ",
+        "不明",
+        "誤検出(動物なし)"
+      ],
+      "note": "Derived from training label frequency only. No eval gt used."
+    }
+  },
+  "rcta_score_stats": {
+    "binary": {
+      "min": 0.0032,
+      "mean": 0.1385,
+      "max": 0.9614,
+      "n_nonzero": 6906
+    },
+    "inv_freq": {
+      "min": 0.0009,
+      "mean": 0.0358,
+      "max": 0.2499,
+      "n_nonzero": 6906
+    },
+    "log_inv_freq": {
+      "min": 0.0025,
+      "mean": 0.1108,
+      "max": 0.6866,
+      "n_nonzero": 6906
+    }
+  },
+  "all_results": {
+    "true_rare_n173": {
+      "confidence": {
+        "auc_rare_recall": 0.7922,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.1509,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.2197,
+        "capture_B20pct": 0.4277,
+        "capture_B30pct": 0.5723
+      },
+      "RAU_lambda0.5_k10": {
+        "auc_rare_recall": 0.7738,
+        "auc_acc": 0.8616,
+        "auc_rare_recall_b30": 0.1293,
+        "auc_acc_b30": 0.2133,
+        "capture_B10pct": 0.1329,
+        "capture_B20pct": 0.289,
+        "capture_B30pct": 0.5145
+      },
+      "BADGE_pca20": {
+        "auc_rare_recall": 0.7816,
+        "auc_acc": 0.856,
+        "auc_rare_recall_b30": 0.1438,
+        "auc_acc_b30": 0.2126,
+        "capture_B10pct": 0.2197,
+        "capture_B20pct": 0.3873,
+        "capture_B30pct": 0.5376
+      },
+      "RCTA_binary_alpha0.0": {
+        "auc_rare_recall": 0.7922,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.1509,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.2197,
+        "capture_B20pct": 0.4277,
+        "capture_B30pct": 0.5723
+      },
+      "RCTA_binary_alpha0.25": {
+        "auc_rare_recall": 0.8066,
+        "auc_acc": 0.8627,
+        "auc_rare_recall_b30": 0.1656,
+        "auc_acc_b30": 0.2151,
+        "capture_B10pct": 0.3584,
+        "capture_B20pct": 0.5145,
+        "capture_B30pct": 0.6243
+      },
+      "RCTA_binary_alpha0.5": {
+        "auc_rare_recall": 0.8237,
+        "auc_acc": 0.86,
+        "auc_rare_recall_b30": 0.1777,
+        "auc_acc_b30": 0.2146,
+        "capture_B10pct": 0.5029,
+        "capture_B20pct": 0.6994,
+        "capture_B30pct": 0.763
+      },
+      "RCTA_binary_alpha0.75": {
+        "auc_rare_recall": 0.8282,
+        "auc_acc": 0.8564,
+        "auc_rare_recall_b30": 0.1814,
+        "auc_acc_b30": 0.2137,
+        "capture_B10pct": 0.5665,
+        "capture_B20pct": 0.711,
+        "capture_B30pct": 0.7919
+      },
+      "RCTA_binary_alpha1.0": {
+        "auc_rare_recall": 0.8256,
+        "auc_acc": 0.8472,
+        "auc_rare_recall_b30": 0.1857,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.5723,
+        "capture_B20pct": 0.7399,
+        "capture_B30pct": 0.8035
+      },
+      "RCTA_inv_freq_alpha0.0": {
+        "auc_rare_recall": 0.7922,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.1509,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.2197,
+        "capture_B20pct": 0.4277,
+        "capture_B30pct": 0.5723
+      },
+      "RCTA_inv_freq_alpha0.25": {
+        "auc_rare_recall": 0.802,
+        "auc_acc": 0.8625,
+        "auc_rare_recall_b30": 0.1642,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.3295,
+        "capture_B20pct": 0.4855,
+        "capture_B30pct": 0.5896
+      },
+      "RCTA_inv_freq_alpha0.5": {
+        "auc_rare_recall": 0.8137,
+        "auc_acc": 0.8607,
+        "auc_rare_recall_b30": 0.171,
+        "auc_acc_b30": 0.2148,
+        "capture_B10pct": 0.3931,
+        "capture_B20pct": 0.5145,
+        "capture_B30pct": 0.6243
+      },
+      "RCTA_inv_freq_alpha0.75": {
+        "auc_rare_recall": 0.8153,
+        "auc_acc": 0.8567,
+        "auc_rare_recall_b30": 0.1754,
+        "auc_acc_b30": 0.214,
+        "capture_B10pct": 0.3988,
+        "capture_B20pct": 0.5491,
+        "capture_B30pct": 0.6936
+      },
+      "RCTA_inv_freq_alpha1.0": {
+        "auc_rare_recall": 0.8066,
+        "auc_acc": 0.8464,
+        "auc_rare_recall_b30": 0.176,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.4046,
+        "capture_B20pct": 0.6821,
+        "capture_B30pct": 0.7514
+      },
+      "RCTA_log_inv_freq_alpha0.0": {
+        "auc_rare_recall": 0.7922,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.1509,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.2197,
+        "capture_B20pct": 0.4277,
+        "capture_B30pct": 0.5723
+      },
+      "RCTA_log_inv_freq_alpha0.25": {
+        "auc_rare_recall": 0.8078,
+        "auc_acc": 0.8625,
+        "auc_rare_recall_b30": 0.1668,
+        "auc_acc_b30": 0.2151,
+        "capture_B10pct": 0.3642,
+        "capture_B20pct": 0.5145,
+        "capture_B30pct": 0.6243
+      },
+      "RCTA_log_inv_freq_alpha0.5": {
+        "auc_rare_recall": 0.8236,
+        "auc_acc": 0.8598,
+        "auc_rare_recall_b30": 0.1762,
+        "auc_acc_b30": 0.2146,
+        "capture_B10pct": 0.4509,
+        "capture_B20pct": 0.6994,
+        "capture_B30pct": 0.7572
+      },
+      "RCTA_log_inv_freq_alpha0.75": {
+        "auc_rare_recall": 0.8236,
+        "auc_acc": 0.8558,
+        "auc_rare_recall_b30": 0.1793,
+        "auc_acc_b30": 0.2136,
+        "capture_B10pct": 0.5665,
+        "capture_B20pct": 0.7052,
+        "capture_B30pct": 0.7861
+      },
+      "RCTA_log_inv_freq_alpha1.0": {
+        "auc_rare_recall": 0.8214,
+        "auc_acc": 0.8474,
+        "auc_rare_recall_b30": 0.1829,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.5549,
+        "capture_B20pct": 0.7283,
+        "capture_B30pct": 0.8092
+      }
+    },
+    "unknown_n1307": {
+      "confidence": {
+        "auc_rare_recall": 0.8741,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.2234,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.065,
+        "capture_B20pct": 0.1446,
+        "capture_B30pct": 0.2663
+      },
+      "RAU_lambda0.5_k10": {
+        "auc_rare_recall": 0.8944,
+        "auc_acc": 0.8616,
+        "auc_rare_recall_b30": 0.2312,
+        "auc_acc_b30": 0.2133,
+        "capture_B10pct": 0.1186,
+        "capture_B20pct": 0.2288,
+        "capture_B30pct": 0.352
+      },
+      "BADGE_pca20": {
+        "auc_rare_recall": 0.8806,
+        "auc_acc": 0.856,
+        "auc_rare_recall_b30": 0.2275,
+        "auc_acc_b30": 0.2126,
+        "capture_B10pct": 0.0857,
+        "capture_B20pct": 0.1936,
+        "capture_B30pct": 0.3015
+      },
+      "RCTA_binary_alpha0.0": {
+        "auc_rare_recall": 0.8741,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.2234,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.065,
+        "capture_B20pct": 0.1446,
+        "capture_B30pct": 0.2663
+      },
+      "RCTA_binary_alpha0.25": {
+        "auc_rare_recall": 0.875,
+        "auc_acc": 0.8627,
+        "auc_rare_recall_b30": 0.2233,
+        "auc_acc_b30": 0.2151,
+        "capture_B10pct": 0.0597,
+        "capture_B20pct": 0.14,
+        "capture_B30pct": 0.2594
+      },
+      "RCTA_binary_alpha0.5": {
+        "auc_rare_recall": 0.8713,
+        "auc_acc": 0.86,
+        "auc_rare_recall_b30": 0.2235,
+        "auc_acc_b30": 0.2146,
+        "capture_B10pct": 0.0643,
+        "capture_B20pct": 0.1347,
+        "capture_B30pct": 0.2387
+      },
+      "RCTA_binary_alpha0.75": {
+        "auc_rare_recall": 0.8684,
+        "auc_acc": 0.8564,
+        "auc_rare_recall_b30": 0.2232,
+        "auc_acc_b30": 0.2137,
+        "capture_B10pct": 0.0689,
+        "capture_B20pct": 0.1331,
+        "capture_B30pct": 0.2204
+      },
+      "RCTA_binary_alpha1.0": {
+        "auc_rare_recall": 0.8559,
+        "auc_acc": 0.8472,
+        "auc_rare_recall_b30": 0.2231,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.0689,
+        "capture_B20pct": 0.1308,
+        "capture_B30pct": 0.2196
+      },
+      "RCTA_inv_freq_alpha0.0": {
+        "auc_rare_recall": 0.8741,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.2234,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.065,
+        "capture_B20pct": 0.1446,
+        "capture_B30pct": 0.2663
+      },
+      "RCTA_inv_freq_alpha0.25": {
+        "auc_rare_recall": 0.8737,
+        "auc_acc": 0.8625,
+        "auc_rare_recall_b30": 0.2225,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.0581,
+        "capture_B20pct": 0.1393,
+        "capture_B30pct": 0.2555
+      },
+      "RCTA_inv_freq_alpha0.5": {
+        "auc_rare_recall": 0.8717,
+        "auc_acc": 0.8607,
+        "auc_rare_recall_b30": 0.223,
+        "auc_acc_b30": 0.2148,
+        "capture_B10pct": 0.0581,
+        "capture_B20pct": 0.1393,
+        "capture_B30pct": 0.2418
+      },
+      "RCTA_inv_freq_alpha0.75": {
+        "auc_rare_recall": 0.8678,
+        "auc_acc": 0.8567,
+        "auc_rare_recall_b30": 0.2234,
+        "auc_acc_b30": 0.214,
+        "capture_B10pct": 0.0666,
+        "capture_B20pct": 0.137,
+        "capture_B30pct": 0.2234
+      },
+      "RCTA_inv_freq_alpha1.0": {
+        "auc_rare_recall": 0.8563,
+        "auc_acc": 0.8464,
+        "auc_rare_recall_b30": 0.2228,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.0681,
+        "capture_B20pct": 0.1324,
+        "capture_B30pct": 0.2135
+      },
+      "RCTA_log_inv_freq_alpha0.0": {
+        "auc_rare_recall": 0.8741,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.2234,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.065,
+        "capture_B20pct": 0.1446,
+        "capture_B30pct": 0.2663
+      },
+      "RCTA_log_inv_freq_alpha0.25": {
+        "auc_rare_recall": 0.8748,
+        "auc_acc": 0.8625,
+        "auc_rare_recall_b30": 0.2233,
+        "auc_acc_b30": 0.2151,
+        "capture_B10pct": 0.0581,
+        "capture_B20pct": 0.1415,
+        "capture_B30pct": 0.2594
+      },
+      "RCTA_log_inv_freq_alpha0.5": {
+        "auc_rare_recall": 0.871,
+        "auc_acc": 0.8598,
+        "auc_rare_recall_b30": 0.2236,
+        "auc_acc_b30": 0.2146,
+        "capture_B10pct": 0.0673,
+        "capture_B20pct": 0.1331,
+        "capture_B30pct": 0.2349
+      },
+      "RCTA_log_inv_freq_alpha0.75": {
+        "auc_rare_recall": 0.8664,
+        "auc_acc": 0.8558,
+        "auc_rare_recall_b30": 0.223,
+        "auc_acc_b30": 0.2136,
+        "capture_B10pct": 0.0666,
+        "capture_B20pct": 0.1316,
+        "capture_B30pct": 0.2196
+      },
+      "RCTA_log_inv_freq_alpha1.0": {
+        "auc_rare_recall": 0.856,
+        "auc_acc": 0.8474,
+        "auc_rare_recall_b30": 0.2229,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.0658,
+        "capture_B20pct": 0.1331,
+        "capture_B30pct": 0.2211
+      }
+    },
+    "rare_all_n1480": {
+      "confidence": {
+        "auc_rare_recall": 0.8645,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.2149,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.0831,
+        "capture_B20pct": 0.1777,
+        "capture_B30pct": 0.302
+      },
+      "RAU_lambda0.5_k10": {
+        "auc_rare_recall": 0.8803,
+        "auc_acc": 0.8616,
+        "auc_rare_recall_b30": 0.2193,
+        "auc_acc_b30": 0.2133,
+        "capture_B10pct": 0.1203,
+        "capture_B20pct": 0.2358,
+        "capture_B30pct": 0.3709
+      },
+      "BADGE_pca20": {
+        "auc_rare_recall": 0.869,
+        "auc_acc": 0.856,
+        "auc_rare_recall_b30": 0.2177,
+        "auc_acc_b30": 0.2126,
+        "capture_B10pct": 0.1014,
+        "capture_B20pct": 0.2162,
+        "capture_B30pct": 0.3291
+      },
+      "RCTA_binary_alpha0.0": {
+        "auc_rare_recall": 0.8645,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.2149,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.0831,
+        "capture_B20pct": 0.1777,
+        "capture_B30pct": 0.302
+      },
+      "RCTA_binary_alpha0.25": {
+        "auc_rare_recall": 0.867,
+        "auc_acc": 0.8627,
+        "auc_rare_recall_b30": 0.2166,
+        "auc_acc_b30": 0.2151,
+        "capture_B10pct": 0.0946,
+        "capture_B20pct": 0.1838,
+        "capture_B30pct": 0.302
+      },
+      "RCTA_binary_alpha0.5": {
+        "auc_rare_recall": 0.8658,
+        "auc_acc": 0.86,
+        "auc_rare_recall_b30": 0.2181,
+        "auc_acc_b30": 0.2146,
+        "capture_B10pct": 0.1155,
+        "capture_B20pct": 0.2007,
+        "capture_B30pct": 0.3
+      },
+      "RCTA_binary_alpha0.75": {
+        "auc_rare_recall": 0.8637,
+        "auc_acc": 0.8564,
+        "auc_rare_recall_b30": 0.2183,
+        "auc_acc_b30": 0.2137,
+        "capture_B10pct": 0.127,
+        "capture_B20pct": 0.2007,
+        "capture_B30pct": 0.2872
+      },
+      "RCTA_binary_alpha1.0": {
+        "auc_rare_recall": 0.8524,
+        "auc_acc": 0.8472,
+        "auc_rare_recall_b30": 0.2187,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.1277,
+        "capture_B20pct": 0.202,
+        "capture_B30pct": 0.2878
+      },
+      "RCTA_inv_freq_alpha0.0": {
+        "auc_rare_recall": 0.8645,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.2149,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.0831,
+        "capture_B20pct": 0.1777,
+        "capture_B30pct": 0.302
+      },
+      "RCTA_inv_freq_alpha0.25": {
+        "auc_rare_recall": 0.8654,
+        "auc_acc": 0.8625,
+        "auc_rare_recall_b30": 0.2157,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.0899,
+        "capture_B20pct": 0.1797,
+        "capture_B30pct": 0.2946
+      },
+      "RCTA_inv_freq_alpha0.5": {
+        "auc_rare_recall": 0.865,
+        "auc_acc": 0.8607,
+        "auc_rare_recall_b30": 0.2169,
+        "auc_acc_b30": 0.2148,
+        "capture_B10pct": 0.0973,
+        "capture_B20pct": 0.1831,
+        "capture_B30pct": 0.2865
+      },
+      "RCTA_inv_freq_alpha0.75": {
+        "auc_rare_recall": 0.8617,
+        "auc_acc": 0.8567,
+        "auc_rare_recall_b30": 0.2178,
+        "auc_acc_b30": 0.214,
+        "capture_B10pct": 0.1054,
+        "capture_B20pct": 0.1851,
+        "capture_B30pct": 0.2784
+      },
+      "RCTA_inv_freq_alpha1.0": {
+        "auc_rare_recall": 0.8505,
+        "auc_acc": 0.8464,
+        "auc_rare_recall_b30": 0.2173,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.1074,
+        "capture_B20pct": 0.1966,
+        "capture_B30pct": 0.2764
+      },
+      "RCTA_log_inv_freq_alpha0.0": {
+        "auc_rare_recall": 0.8645,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.2149,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.0831,
+        "capture_B20pct": 0.1777,
+        "capture_B30pct": 0.302
+      },
+      "RCTA_log_inv_freq_alpha0.25": {
+        "auc_rare_recall": 0.8669,
+        "auc_acc": 0.8625,
+        "auc_rare_recall_b30": 0.2167,
+        "auc_acc_b30": 0.2151,
+        "capture_B10pct": 0.0939,
+        "capture_B20pct": 0.1851,
+        "capture_B30pct": 0.302
+      },
+      "RCTA_log_inv_freq_alpha0.5": {
+        "auc_rare_recall": 0.8655,
+        "auc_acc": 0.8598,
+        "auc_rare_recall_b30": 0.218,
+        "auc_acc_b30": 0.2146,
+        "capture_B10pct": 0.1122,
+        "capture_B20pct": 0.1993,
+        "capture_B30pct": 0.2959
+      },
+      "RCTA_log_inv_freq_alpha0.75": {
+        "auc_rare_recall": 0.8614,
+        "auc_acc": 0.8558,
+        "auc_rare_recall_b30": 0.2179,
+        "auc_acc_b30": 0.2136,
+        "capture_B10pct": 0.125,
+        "capture_B20pct": 0.1986,
+        "capture_B30pct": 0.2858
+      },
+      "RCTA_log_inv_freq_alpha1.0": {
+        "auc_rare_recall": 0.852,
+        "auc_acc": 0.8474,
+        "auc_rare_recall_b30": 0.2182,
+        "auc_acc_b30": 0.2125,
+        "capture_B10pct": 0.123,
+        "capture_B20pct": 0.2027,
+        "capture_B30pct": 0.2899
+      }
+    }
+  },
+  "random_baselines": {
+    "true_rare_n173": {
+      "auc_rare_mean": 0.6122,
+      "auc_rare_std": 0.0177,
+      "auc_rare_b30_mean": 0.1024,
+      "auc_rare_b30_std": 0.0054,
+      "n_shuffles": 2000
+    },
+    "unknown_n1307": {
+      "auc_rare_mean": 0.841,
+      "auc_rare_std": 0.004,
+      "auc_rare_b30_mean": 0.2189,
+      "auc_rare_b30_std": 0.0012,
+      "n_shuffles": 2000
+    },
+    "rare_all_n1480": {
+      "auc_rare_mean": 0.8142,
+      "auc_rare_std": 0.0041,
+      "auc_rare_b30_mean": 0.2052,
+      "auc_rare_b30_std": 0.0013,
+      "n_shuffles": 2000
+    }
+  },
+  "statistical_tests_true_rare_n173": {
+    "RCTA_binary_alpha0.0": {
+      "rcta_auc_n173": 0.7922,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_binary_alpha0.0",
+        "label_b": "confidence",
+        "mean_gap": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha0.0) - rare_recall_AUC(confidence). CI=[0.0000, 0.0000]. 非有意(0を含む) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_binary_alpha0.0",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0156,
+        "ci95": [
+          -0.0078,
+          0.0381
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha0.0) - rare_recall_AUC(RAU_lambda0.5). CI=[-0.0078, 0.0381]. 非有意(0を含む) at alpha=0.05."
+      }
+    },
+    "RCTA_binary_alpha0.25": {
+      "rcta_auc_n173": 0.8066,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_binary_alpha0.25",
+        "label_b": "confidence",
+        "mean_gap": 0.0173,
+        "ci95": [
+          0.0059,
+          0.0295
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha0.25) - rare_recall_AUC(confidence). CI=[0.0059, 0.0295]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_binary_alpha0.25",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0332,
+        "ci95": [
+          0.0057,
+          0.0563
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha0.25) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0057, 0.0563]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_binary_alpha0.5": {
+      "rcta_auc_n173": 0.8237,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_binary_alpha0.5",
+        "label_b": "confidence",
+        "mean_gap": 0.0339,
+        "ci95": [
+          0.0189,
+          0.0522
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha0.5) - rare_recall_AUC(confidence). CI=[0.0189, 0.0522]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_binary_alpha0.5",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.048,
+        "ci95": [
+          0.019,
+          0.0756
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha0.5) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0190, 0.0756]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_binary_alpha0.75": {
+      "rcta_auc_n173": 0.8282,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_binary_alpha0.75",
+        "label_b": "confidence",
+        "mean_gap": 0.0352,
+        "ci95": [
+          0.0151,
+          0.0536
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha0.75) - rare_recall_AUC(confidence). CI=[0.0151, 0.0536]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_binary_alpha0.75",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0511,
+        "ci95": [
+          0.0218,
+          0.0781
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha0.75) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0218, 0.0781]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_binary_alpha1.0": {
+      "rcta_auc_n173": 0.8256,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_binary_alpha1.0",
+        "label_b": "confidence",
+        "mean_gap": 0.0349,
+        "ci95": [
+          0.0113,
+          0.0587
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha1.0) - rare_recall_AUC(confidence). CI=[0.0113, 0.0587]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_binary_alpha1.0",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0497,
+        "ci95": [
+          0.0161,
+          0.0844
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha1.0) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0161, 0.0844]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_inv_freq_alpha0.0": {
+      "rcta_auc_n173": 0.7922,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_inv_freq_alpha0.0",
+        "label_b": "confidence",
+        "mean_gap": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha0.0) - rare_recall_AUC(confidence). CI=[0.0000, 0.0000]. 非有意(0を含む) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_inv_freq_alpha0.0",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0166,
+        "ci95": [
+          -0.009,
+          0.0409
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha0.0) - rare_recall_AUC(RAU_lambda0.5). CI=[-0.0090, 0.0409]. 非有意(0を含む) at alpha=0.05."
+      }
+    },
+    "RCTA_inv_freq_alpha0.25": {
+      "rcta_auc_n173": 0.802,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_inv_freq_alpha0.25",
+        "label_b": "confidence",
+        "mean_gap": 0.0109,
+        "ci95": [
+          -0.0,
+          0.0223
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha0.25) - rare_recall_AUC(confidence). CI=[-0.0000, 0.0223]. 非有意(0を含む) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_inv_freq_alpha0.25",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0271,
+        "ci95": [
+          0.0008,
+          0.0553
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha0.25) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0008, 0.0553]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_inv_freq_alpha0.5": {
+      "rcta_auc_n173": 0.8137,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_inv_freq_alpha0.5",
+        "label_b": "confidence",
+        "mean_gap": 0.0233,
+        "ci95": [
+          0.0093,
+          0.0374
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha0.5) - rare_recall_AUC(confidence). CI=[0.0093, 0.0374]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_inv_freq_alpha0.5",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0385,
+        "ci95": [
+          0.0099,
+          0.0669
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha0.5) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0099, 0.0669]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_inv_freq_alpha0.75": {
+      "rcta_auc_n173": 0.8153,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_inv_freq_alpha0.75",
+        "label_b": "confidence",
+        "mean_gap": 0.0235,
+        "ci95": [
+          0.005,
+          0.044
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha0.75) - rare_recall_AUC(confidence). CI=[0.0050, 0.0440]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_inv_freq_alpha0.75",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0404,
+        "ci95": [
+          0.012,
+          0.0697
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha0.75) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0120, 0.0697]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_inv_freq_alpha1.0": {
+      "rcta_auc_n173": 0.8066,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_inv_freq_alpha1.0",
+        "label_b": "confidence",
+        "mean_gap": 0.0166,
+        "ci95": [
+          -0.0078,
+          0.0411
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha1.0) - rare_recall_AUC(confidence). CI=[-0.0078, 0.0411]. 非有意(0を含む) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_inv_freq_alpha1.0",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0312,
+        "ci95": [
+          -0.0019,
+          0.0651
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_inv_freq_alpha1.0) - rare_recall_AUC(RAU_lambda0.5). CI=[-0.0019, 0.0651]. 非有意(0を含む) at alpha=0.05."
+      }
+    },
+    "RCTA_log_inv_freq_alpha0.0": {
+      "rcta_auc_n173": 0.7922,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_log_inv_freq_alpha0.0",
+        "label_b": "confidence",
+        "mean_gap": 0.0,
+        "ci95": [
+          0.0,
+          0.0
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha0.0) - rare_recall_AUC(confidence). CI=[0.0000, 0.0000]. 非有意(0を含む) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_log_inv_freq_alpha0.0",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0164,
+        "ci95": [
+          -0.0045,
+          0.0418
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": false,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha0.0) - rare_recall_AUC(RAU_lambda0.5). CI=[-0.0045, 0.0418]. 非有意(0を含む) at alpha=0.05."
+      }
+    },
+    "RCTA_log_inv_freq_alpha0.25": {
+      "rcta_auc_n173": 0.8078,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_log_inv_freq_alpha0.25",
+        "label_b": "confidence",
+        "mean_gap": 0.0171,
+        "ci95": [
+          0.0062,
+          0.0285
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha0.25) - rare_recall_AUC(confidence). CI=[0.0062, 0.0285]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_log_inv_freq_alpha0.25",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0315,
+        "ci95": [
+          0.0054,
+          0.058
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha0.25) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0054, 0.0580]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_log_inv_freq_alpha0.5": {
+      "rcta_auc_n173": 0.8236,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_log_inv_freq_alpha0.5",
+        "label_b": "confidence",
+        "mean_gap": 0.0328,
+        "ci95": [
+          0.0193,
+          0.0501
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha0.5) - rare_recall_AUC(confidence). CI=[0.0193, 0.0501]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_log_inv_freq_alpha0.5",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0487,
+        "ci95": [
+          0.0191,
+          0.0799
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha0.5) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0191, 0.0799]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_log_inv_freq_alpha0.75": {
+      "rcta_auc_n173": 0.8236,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_log_inv_freq_alpha0.75",
+        "label_b": "confidence",
+        "mean_gap": 0.0325,
+        "ci95": [
+          0.0144,
+          0.0524
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha0.75) - rare_recall_AUC(confidence). CI=[0.0144, 0.0524]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_log_inv_freq_alpha0.75",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0478,
+        "ci95": [
+          0.0146,
+          0.0776
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha0.75) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0146, 0.0776]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "RCTA_log_inv_freq_alpha1.0": {
+      "rcta_auc_n173": 0.8214,
+      "perm_p_vs_random": 0.0001,
+      "perm_significant": true,
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_log_inv_freq_alpha1.0",
+        "label_b": "confidence",
+        "mean_gap": 0.0306,
+        "ci95": [
+          0.0093,
+          0.0534
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha1.0) - rare_recall_AUC(confidence). CI=[0.0093, 0.0534]. 有意(0を含まない) at alpha=0.05."
+      },
+      "bootstrap_vs_rau": {
+        "label_a": "RCTA_log_inv_freq_alpha1.0",
+        "label_b": "RAU_lambda0.5",
+        "mean_gap": 0.0487,
+        "ci95": [
+          0.0138,
+          0.0819
+        ],
+        "n_bootstrap": 500,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_log_inv_freq_alpha1.0) - rare_recall_AUC(RAU_lambda0.5). CI=[0.0138, 0.0819]. 有意(0を含まない) at alpha=0.05."
+      }
+    }
+  },
+  "summary": {
+    "focus": "true_rare_n173",
+    "baselines": {
+      "confidence": {
+        "auc_rare_recall": 0.7922,
+        "auc_acc": 0.8628,
+        "auc_rare_recall_b30": 0.1509,
+        "auc_acc_b30": 0.215,
+        "capture_B10pct": 0.2197,
+        "capture_B20pct": 0.4277,
+        "capture_B30pct": 0.5723
+      },
+      "RAU_lambda0.5_k10": {
+        "auc_rare_recall": 0.7738,
+        "auc_acc": 0.8616,
+        "auc_rare_recall_b30": 0.1293,
+        "auc_acc_b30": 0.2133,
+        "capture_B10pct": 0.1329,
+        "capture_B20pct": 0.289,
+        "capture_B30pct": 0.5145
+      },
+      "BADGE_pca20": {
+        "auc_rare_recall": 0.7816,
+        "auc_acc": 0.856,
+        "auc_rare_recall_b30": 0.1438,
+        "auc_acc_b30": 0.2126,
+        "capture_B10pct": 0.2197,
+        "capture_B20pct": 0.3873,
+        "capture_B30pct": 0.5376
+      }
+    },
+    "random": {
+      "auc_rare_mean": 0.6122,
+      "auc_rare_std": 0.0177,
+      "auc_rare_b30_mean": 0.1024,
+      "auc_rare_b30_std": 0.0054,
+      "n_shuffles": 2000
+    },
+    "confidence_auc": 0.7922,
+    "best_rcta_by_eval_auc": {
+      "key": "RCTA_binary_alpha0.75",
+      "auc": 0.8282,
+      "note": "Selected by same eval set — subject to overfitting bias"
+    },
+    "rcta_binary_pure": {
+      "key": "RCTA_binary_alpha1.0",
+      "auc": 0.8256,
+      "note": "alpha=1.0 = pure rare-class mass, no uncertainty. No alpha selection from eval."
+    },
+    "rcta_binary_half": {
+      "key": "RCTA_binary_alpha0.5",
+      "auc": 0.8237,
+      "note": "alpha=0.5 = equal mix of RCTA and uncertainty."
+    },
+    "beats_confidence": {
+      "best_rcta": true,
+      "best_rcta_auc": 0.8282,
+      "confidence_auc": 0.7922
+    }
+  }
+}

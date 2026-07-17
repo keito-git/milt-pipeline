@@ -1,0 +1,220 @@
+{
+  "_meta": {
+    "status": "complete",
+    "script": "/Users/ishitatakashishou/trailcam_bench/exp_annotation_cost.py",
+    "run_timestamp": "2026-07-16T15:21:25",
+    "input_canonical": "/Users/ishitatakashishou/trailcam_bench/outputs/benchmark/pipeline_canonical.json",
+    "elapsed_s": 0.0,
+    "description": "E2: Annotation labor/cost model derived from pipeline_canonical.json. No new training or embedding computation."
+  },
+  "n_total_eval": 6906,
+  "base_accuracy": 0.6112,
+  "budgets_pct": [
+    0,
+    5,
+    10,
+    20,
+    30,
+    50,
+    100
+  ],
+  "confidence_accs_by_budget": [
+    0.6112,
+    0.6504,
+    0.6868,
+    0.7525,
+    0.8094,
+    0.9052,
+    1.0
+  ],
+  "random_expected_accs_by_budget": [
+    0.6112,
+    0.6306,
+    0.6501,
+    0.689,
+    0.7278,
+    0.8056,
+    1.0
+  ],
+  "random_auc_observed_mean": 0.8056,
+  "random_auc_observed_std": 0.0016,
+  "random_auc_n_shuffles": 10000,
+  "targets": {
+    "tau_80pct": {
+      "target_accuracy": 0.8,
+      "full_review": {
+        "budget_pct": 100.0,
+        "n_crops": 6906,
+        "reduction_vs_full_review": 0.0,
+        "note": "Baseline: review every crop"
+      },
+      "confidence_order": {
+        "budget_pct": 28.35,
+        "n_crops": 1958,
+        "reduction_vs_full_review": 0.7165
+      },
+      "random_order": {
+        "budget_pct": 48.56,
+        "n_crops": 3354,
+        "reduction_vs_full_review": 0.5144
+      }
+    },
+    "tau_85pct": {
+      "target_accuracy": 0.85,
+      "full_review": {
+        "budget_pct": 100.0,
+        "n_crops": 6906,
+        "reduction_vs_full_review": 0.0,
+        "note": "Baseline: review every crop"
+      },
+      "confidence_order": {
+        "budget_pct": 38.48,
+        "n_crops": 2657,
+        "reduction_vs_full_review": 0.6152
+      },
+      "random_order": {
+        "budget_pct": 61.42,
+        "n_crops": 4242,
+        "reduction_vs_full_review": 0.3858
+      }
+    },
+    "tau_90pct": {
+      "target_accuracy": 0.9,
+      "full_review": {
+        "budget_pct": 100.0,
+        "n_crops": 6906,
+        "reduction_vs_full_review": 0.0,
+        "note": "Baseline: review every crop"
+      },
+      "confidence_order": {
+        "budget_pct": 48.91,
+        "n_crops": 3378,
+        "reduction_vs_full_review": 0.5109
+      },
+      "random_order": {
+        "budget_pct": 74.28,
+        "n_crops": 5130,
+        "reduction_vs_full_review": 0.2572
+      }
+    }
+  },
+  "cost_model": {
+    "assumption": "Each reviewed crop costs t (arbitrary unit). t is a free parameter; only RATIOS are meaningful. Full review = t * n_total. Confidence order at B* = t * n_crops*. Random order at B* = t * n_crops_random*.",
+    "by_target": {
+      "tau_80pct": {
+        "target_accuracy": 0.8,
+        "cost_confidence_order_per_fullreview": 0.2835,
+        "cost_confidence_per_random": 0.5838,
+        "crops_saved_vs_random": 1396
+      },
+      "tau_85pct": {
+        "target_accuracy": 0.85,
+        "cost_confidence_order_per_fullreview": 0.3847,
+        "cost_confidence_per_random": 0.6264,
+        "crops_saved_vs_random": 1585
+      },
+      "tau_90pct": {
+        "target_accuracy": 0.9,
+        "cost_confidence_order_per_fullreview": 0.4891,
+        "cost_confidence_per_random": 0.6585,
+        "crops_saved_vs_random": 1752
+      }
+    }
+  },
+  "correction_rate_by_band": {
+    "description": "If you SKIP reviewing a crop, the auto-label is used. 'Correction rate' = fraction of skipped crops that would need human correction. Confidence ordering prioritizes LOW-confidence crops (high correction rate) first, so the expert budget is efficiently targeted at crops likely to be wrong.",
+    "bands": [
+      {
+        "band": "[0.0,0.5)",
+        "n_crops": 2784,
+        "pct_of_total": 40.31,
+        "auto_correction_rate": 0.6214,
+        "wilson95_correction_rate": [
+          0.6032,
+          0.6392
+        ],
+        "expected_corrections_if_skipped": 1730
+      },
+      {
+        "band": "[0.5,0.7)",
+        "n_crops": 1801,
+        "pct_of_total": 26.08,
+        "auto_correction_rate": 0.3914,
+        "wilson95_correction_rate": [
+          0.3692,
+          0.4142
+        ],
+        "expected_corrections_if_skipped": 705
+      },
+      {
+        "band": "[0.7,0.9)",
+        "n_crops": 1850,
+        "pct_of_total": 26.79,
+        "auto_correction_rate": 0.1314,
+        "wilson95_correction_rate": [
+          0.1167,
+          0.1475
+        ],
+        "expected_corrections_if_skipped": 243
+      },
+      {
+        "band": "[0.9,1.01)",
+        "n_crops": 471,
+        "pct_of_total": 6.82,
+        "auto_correction_rate": 0.0149,
+        "wilson95_correction_rate": [
+          0.0072,
+          0.0304
+        ],
+        "expected_corrections_if_skipped": 7
+      }
+    ]
+  },
+  "correction_efficiency_at_B30": {
+    "budget_B30_n_crops": 2072,
+    "confidence_order_B30": {
+      "expected_corrections_found": 1288,
+      "band_breakdown": [
+        {
+          "band": "[0.0,0.5)",
+          "reviewed": 2072,
+          "expected_corrections": 1288,
+          "correction_rate": 0.6214
+        }
+      ],
+      "corrections_per_crop_reviewed": 0.6216
+    },
+    "random_order_B30": {
+      "expected_corrections_found": 805,
+      "band_breakdown": [
+        {
+          "band": "[0.0,0.5)",
+          "reviewed": 835,
+          "expected_corrections": 519,
+          "correction_rate": 0.6214
+        },
+        {
+          "band": "[0.5,0.7)",
+          "reviewed": 540,
+          "expected_corrections": 211,
+          "correction_rate": 0.3914
+        },
+        {
+          "band": "[0.7,0.9)",
+          "reviewed": 555,
+          "expected_corrections": 73,
+          "correction_rate": 0.1314
+        },
+        {
+          "band": "[0.9,1.01)",
+          "reviewed": 141,
+          "expected_corrections": 2,
+          "correction_rate": 0.0149
+        }
+      ],
+      "corrections_per_crop_reviewed": 0.3885
+    },
+    "ratio_corrections_conf_vs_random": 1.6,
+    "note": "Approximation: assumes crops within each confidence band are uniformly distributed in the confidence ordering; confidence ordering fills bands from [0,0.5) upward. Actual ratio will differ slightly from interpolation artifacts."
+  }
+}

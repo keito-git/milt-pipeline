@@ -1,0 +1,130 @@
+{
+  "_meta": {
+    "env": {
+      "hostname": "MacBook-Pro-2.local",
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "python": "3.11.3 (v3.11.3:f3909b8bc8, Apr  4 2023, 20:12:10) [Clang 13.0.0 (clang-1300.0.29.30)]",
+      "numpy": "1.26.4",
+      "script": "/Users/ishitatakashishou/trailcam_bench/rcta_bootstrap2000.py",
+      "started": "2026-07-12T09:09:30",
+      "purpose": "Bootstrap N=2000(+5000) re-run for RCTA_binary_alpha1.0 vs confidence on true_rare_n173. Verifies CI stability vs original N=500.",
+      "gpu_rule": "CUDA_VISIBLE_DEVICES='' set before any torch import"
+    },
+    "status": "completed",
+    "elapsed_s": 15.4,
+    "finished": "2026-07-12T09:09:46"
+  },
+  "cross_verify": {
+    "rcta_auc_computed": 0.8256,
+    "rcta_auc_expected": 0.8256,
+    "rcta_auc_match": true,
+    "conf_auc_computed": 0.7922,
+    "conf_auc_expected": 0.7922,
+    "conf_auc_match": true,
+    "n_true_rare_computed": 173,
+    "n_true_rare_expected": 173,
+    "n_true_rare_match": true,
+    "status": "PASS"
+  },
+  "bootstrap_results_by_n": {
+    "N2000": {
+      "label_a": "RCTA_binary_alpha1.0",
+      "label_b": "confidence",
+      "mean_gap": 0.0344,
+      "ci95": [
+        0.01,
+        0.0585
+      ],
+      "n_bootstrap": 2000,
+      "significant_at_alpha05": true,
+      "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha1.0) - rare_recall_AUC(confidence). CI=[0.0100, 0.0585]. 有意(0を含まない) at alpha=0.05.",
+      "gaps_stats": {
+        "mean": 0.03443,
+        "std": 0.012237,
+        "p025": 0.009965,
+        "p975": 0.058542,
+        "p05": 0.014285,
+        "p95": 0.054421
+      },
+      "elapsed_s": 4.3
+    },
+    "N5000": {
+      "label_a": "RCTA_binary_alpha1.0",
+      "label_b": "confidence",
+      "mean_gap": 0.0349,
+      "ci95": [
+        0.0106,
+        0.0596
+      ],
+      "n_bootstrap": 5000,
+      "significant_at_alpha05": true,
+      "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha1.0) - rare_recall_AUC(confidence). CI=[0.0106, 0.0596]. 有意(0を含まない) at alpha=0.05.",
+      "gaps_stats": {
+        "mean": 0.034915,
+        "std": 0.012517,
+        "p025": 0.010632,
+        "p975": 0.059584,
+        "p05": 0.014415,
+        "p95": 0.055861
+      },
+      "elapsed_s": 10.6
+    }
+  },
+  "original_n500_reference": {
+    "label_a": "RCTA_binary_alpha1.0",
+    "label_b": "confidence",
+    "mean_gap": 0.0349,
+    "ci95": [
+      0.0113,
+      0.0587
+    ],
+    "n_bootstrap": 500,
+    "significant_at_alpha05": true,
+    "source": "/Users/ishitatakashishou/trailcam_bench/outputs/benchmark/rare_targeted_acquisition.json"
+  },
+  "summary": {
+    "purpose": "N=500 bootstrap CI の安定性確認",
+    "comparison": "RCTA_binary_alpha1.0 vs confidence on true_rare_n173",
+    "n_eval": 6906,
+    "n_true_rare": 173,
+    "rcta_auc_n173": 0.8256,
+    "conf_auc_n173": 0.7922,
+    "original_N500": {
+      "label_a": "RCTA_binary_alpha1.0",
+      "label_b": "confidence",
+      "mean_gap": 0.0349,
+      "ci95": [
+        0.0113,
+        0.0587
+      ],
+      "n_bootstrap": 500,
+      "significant_at_alpha05": true,
+      "source": "/Users/ishitatakashishou/trailcam_bench/outputs/benchmark/rare_targeted_acquisition.json"
+    },
+    "N2000": {
+      "mean_gap": 0.0344,
+      "ci95": [
+        0.01,
+        0.0585
+      ],
+      "significant_at_alpha05": true
+    },
+    "N5000": {
+      "mean_gap": 0.0349,
+      "ci95": [
+        0.0106,
+        0.0596
+      ],
+      "significant_at_alpha05": true
+    },
+    "ci_lower_bound_stable_above_0": true,
+    "stability_verdict": "CI lower bound is >0 at both N=2000 (0.0100) and N=5000 (0.0106). RCTA_binary_alpha1.0 vs confidence の有意差は安定して確認される。",
+    "data_hashes": {
+      "embeddings.npy": "eb0d5091fccfc3915433863480f085f4ac7ce1a61fa428012d5fff83baadbb65",
+      "video_embeddings.npy": "49edabeb4e2bedc4969958299a9212c5d20c2978b2261a0790df0a2f1c3b3d67",
+      "seed_labels.json": "13b61d7e498993a41e839bc136f31ca68b531d330917d5ded3adac067572783f",
+      "labels_video_v1.json": "2c8cb48e273fa1a2364ed4e8f56f8555bee866a4b626ab7a10e45dc66c72f769",
+      "labels_still_v1.json": "e5b86844453c03aa10abaa21de7dbbc4aa5cd7478a45ffb27d915258409d5920"
+    }
+  }
+}

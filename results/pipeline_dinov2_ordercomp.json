@@ -1,0 +1,310 @@
+{
+  "data_info": {
+    "backbone": "DINOv2 (dinov2_vitb14, 768-dim)",
+    "n_eval_seed_out": 6906,
+    "n_rare_seedout": 1480,
+    "n_true_rare_seedout": 173,
+    "n_train": 5736,
+    "n_classes": 19,
+    "classes": [
+      "その他",
+      "アライグマ",
+      "イノシシ",
+      "キジバト",
+      "キツネ",
+      "コジュケイ",
+      "タヌキ",
+      "テン",
+      "トラツグミ",
+      "ニホンアナグマ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "ネコ",
+      "ハクビシン",
+      "ヤマガラ",
+      "不明",
+      "誤検出(動物なし)",
+      "鳥類"
+    ],
+    "base_accuracy": 0.7396,
+    "embedding_dim": 768,
+    "embedding_dtype": "float64",
+    "rare_def": "true not in COMMON and not '誤検出(動物なし)'",
+    "true_rare_def": "true not in COMMON and not '誤検出(動物なし)' and not '不明'"
+  },
+  "confidence_vs_random_perm": {
+    "n_shuffles": 10000,
+    "n_exceed": 0,
+    "p_value": 0.0001,
+    "formula": "(n_exceed+1)/(N_PERM+1) [Phipson & Smyth 2010]"
+  },
+  "bootstrap_auc_gap_confidence_minus": {
+    "coreset": {
+      "mean_gap": 0.0219,
+      "ci95": [
+        0.0187,
+        0.0254
+      ],
+      "n_bootstrap": 500,
+      "note": "Bootstrap CI on AUC(A) - AUC(B). Positive gap = A achieves higher AUC. CI excludes 0 → significant at alpha=0.05."
+    },
+    "badge_approx": {
+      "mean_gap": 0.0007,
+      "ci95": [
+        0.0,
+        0.0014
+      ],
+      "n_bootstrap": 500,
+      "note": "Bootstrap CI on AUC(A) - AUC(B). Positive gap = A achieves higher AUC. CI excludes 0 → significant at alpha=0.05."
+    }
+  },
+  "bootstrap_rcta_binary_minus_confidence_true_rare": {
+    "mean_gap": 0.0938,
+    "ci95": [
+      0.0728,
+      0.1177
+    ],
+    "n_bootstrap": 500,
+    "note": "Bootstrap CI on true_rare_recall_AUC: RCTA_binary − confidence. Positive = RCTA wins."
+  },
+  "orders": {
+    "confidence": {
+      "acc_by_budget": [
+        0.7396,
+        0.7712,
+        0.7994,
+        0.8501,
+        0.8921,
+        0.9526,
+        1.0
+      ],
+      "auc_acc_budget": 0.9193,
+      "rare_recall_by_budget": [
+        0.5878,
+        0.6392,
+        0.6845,
+        0.7561,
+        0.8135,
+        0.9068,
+        1.0
+      ],
+      "rare_recall_auc": 0.863,
+      "true_rare_recall_by_budget": [
+        0.3931,
+        0.5087,
+        0.6069,
+        0.7283,
+        0.7861,
+        0.9075,
+        1.0
+      ],
+      "true_rare_recall_auc": 0.8392
+    },
+    "entropy": {
+      "acc_by_budget": [
+        0.7396,
+        0.7727,
+        0.8012,
+        0.8501,
+        0.8921,
+        0.9526,
+        1.0
+      ],
+      "auc_acc_budget": 0.9195,
+      "rare_recall_by_budget": [
+        0.5878,
+        0.6405,
+        0.6838,
+        0.7561,
+        0.8142,
+        0.9061,
+        1.0
+      ],
+      "rare_recall_auc": 0.8629,
+      "true_rare_recall_by_budget": [
+        0.3931,
+        0.5665,
+        0.6358,
+        0.7283,
+        0.7919,
+        0.9075,
+        1.0
+      ],
+      "true_rare_recall_auc": 0.8451
+    },
+    "margin": {
+      "acc_by_budget": [
+        0.7396,
+        0.7709,
+        0.7992,
+        0.85,
+        0.8923,
+        0.9524,
+        1.0
+      ],
+      "auc_acc_budget": 0.9191,
+      "rare_recall_by_budget": [
+        0.5878,
+        0.6392,
+        0.6811,
+        0.7534,
+        0.8149,
+        0.9074,
+        1.0
+      ],
+      "rare_recall_auc": 0.8629,
+      "true_rare_recall_by_budget": [
+        0.3931,
+        0.5029,
+        0.5838,
+        0.7225,
+        0.7861,
+        0.9075,
+        1.0
+      ],
+      "true_rare_recall_auc": 0.8366
+    },
+    "coreset": {
+      "acc_by_budget": [
+        0.7396,
+        0.7661,
+        0.789,
+        0.8265,
+        0.8587,
+        0.9141,
+        1.0
+      ],
+      "auc_acc_budget": 0.8974,
+      "rare_recall_by_budget": [
+        0.5878,
+        0.6399,
+        0.6777,
+        0.7358,
+        0.7851,
+        0.8655,
+        1.0
+      ],
+      "rare_recall_auc": 0.8418,
+      "true_rare_recall_by_budget": [
+        0.3931,
+        0.526,
+        0.578,
+        0.6243,
+        0.7225,
+        0.8439,
+        1.0
+      ],
+      "true_rare_recall_auc": 0.7957
+    },
+    "badge_approx": {
+      "acc_by_budget": [
+        0.7396,
+        0.7721,
+        0.7992,
+        0.8493,
+        0.892,
+        0.9508,
+        1.0
+      ],
+      "auc_acc_budget": 0.9185,
+      "rare_recall_by_budget": [
+        0.5878,
+        0.6399,
+        0.6831,
+        0.7554,
+        0.8162,
+        0.9007,
+        1.0
+      ],
+      "rare_recall_auc": 0.8611,
+      "true_rare_recall_by_budget": [
+        0.3931,
+        0.5491,
+        0.6069,
+        0.7341,
+        0.8035,
+        0.9133,
+        1.0
+      ],
+      "true_rare_recall_auc": 0.8464
+    },
+    "rcta_binary": {
+      "acc_by_budget": [
+        0.7396,
+        0.7692,
+        0.7989,
+        0.8461,
+        0.8881,
+        0.9486,
+        1.0
+      ],
+      "auc_acc_budget": 0.9167,
+      "rare_recall_by_budget": [
+        0.5878,
+        0.6662,
+        0.7081,
+        0.7703,
+        0.8216,
+        0.8919,
+        1.0
+      ],
+      "rare_recall_auc": 0.8635,
+      "true_rare_recall_by_budget": [
+        0.3931,
+        0.7803,
+        0.8555,
+        0.896,
+        0.9422,
+        0.9711,
+        1.0
+      ],
+      "true_rare_recall_auc": 0.9338
+    },
+    "random": {
+      "auc_acc_budget": 0.8698,
+      "auc_acc_budget_std": 0.0014,
+      "n_shuffles": 10000
+    }
+  },
+  "budgets_pct": [
+    0,
+    5,
+    10,
+    20,
+    30,
+    50,
+    100
+  ],
+  "note": "DINOv2 (768-dim) replication of pipeline_canonical.py order comparison. Protocol: identical LR config, same training/eval split, same seeds. RCTA-binary uses LR softmax probs summed over true-rare classes (no '不明'). All orderings: least-confident/highest-ent/smallest-margin/coreset-first/badge-first/rcta-high-score-first reviewed first. Coreset = k-center greedy on DINOv2 768-dim embedding; BADGE_approx = k-center greedy on LR gradient embedding (PCA-20 projected, K=19 classes → ~380-dim). p-value: (n_exceed+1)/(N_PERM+1) [Phipson & Smyth 2010].",
+  "env_log": {
+    "hostname": "MacBook-Pro-2.local",
+    "platform": "macOS-26.5.1-arm64-arm-64bit",
+    "python": "3.11.3",
+    "numpy": "2.4.6",
+    "sklearn": "1.9.0",
+    "git_commit": "unavailable",
+    "script": "/Users/ishitatakashishou/trailcam_bench/exp_dinov2_ordercomp.py",
+    "run_timestamp": "2026-07-16T15:23:00",
+    "seed_badge": 6906,
+    "seed_perm": 6906,
+    "seed_boot": 6906,
+    "data_hashes": {
+      "dinov2_embeddings.npy": "e98110c756d4492336e3501eca416c32e5eaf4adbfda8577b3d9e2c3239c713d",
+      "dinov2_embed_index.json": "1c5a5ed0af7b3241024ae1c729d0a5c2c56c81984cc614eff1a1540ef73e38e8",
+      "seed_labels.json": "13b61d7e498993a41e839bc136f31ca68b531d330917d5ded3adac067572783f",
+      "labels_video_v1.json": "2c8cb48e273fa1a2364ed4e8f56f8555bee866a4b626ab7a10e45dc66c72f769",
+      "labels_still_v1.json": "e5b86844453c03aa10abaa21de7dbbc4aa5cd7478a45ffb27d915258409d5920",
+      "seed_crops.json": "d0008677f1565921cb7892d4f687f883f32167a43d8400549d0c9c6b18d4b519"
+    },
+    "elapsed_total_s": 87.8
+  },
+  "_meta": {
+    "status": "complete",
+    "started": "2026-07-16T15:23:00",
+    "elapsed_s": 87.8,
+    "script": "/Users/ishitatakashishou/trailcam_bench/exp_dinov2_ordercomp.py",
+    "canonical_reference": "/Users/ishitatakashishou/trailcam_bench/outputs/benchmark/pipeline_canonical.json",
+    "description": "E1 DINOv2 backbone robustness: replicates canonical 6-method order comparison using DINOv2 (768-dim) instead of BioCLIP (512-dim). Adds RCTA-binary true-rare targeting."
+  }
+}
