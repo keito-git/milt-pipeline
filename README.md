@@ -4,7 +4,7 @@ MiLT is a lightweight, model-in-the-loop pipeline for annotating and triaging ni
 data in agroforestry (*satoyama*) landscapes. It combines foundation-model embeddings, seed
 confirmation, a lightweight classifier, confidence-ordered review, and uncertainty triage —
 **without large-scale GPU fine-tuning** — and adds RCTA (Rare-Class-Targeted Acquisition), a
-parameter-free criterion that surfaces already-identified rare species early in the review queue.
+rare-class probability score that moves identified rare species earlier in the review queue.
 
 This repository accompanies the pipeline paper. The dataset itself (crops, metadata, splits,
 embeddings) is released separately as **SatoyamaCT** (see *Data* below); this repo contains only
@@ -31,6 +31,21 @@ Frozen BioCLIP embeddings + a lightweight classifier keep the whole pipeline GPU
 | Annotation-cost saving | target acc 0.80 reached at 28.4% reviewed (−71.7%) | `results/annotation_cost_model.json` |
 | RCTA surfaces true rare species early | capture 22%→57% at 10% budget (bootstrap 95% CI excludes 0) | `results/rau_true_rare_n173.json`, `results/rcta_bootstrap2000.json` |
 | Full-review triage upper bound | acc 0.81 / TV 0.26→0.12 at 30% human | `results/rarity_aware_triage.json` |
+
+## R1 Revision Materials
+
+The revised manuscript uses the files below. Where the *Key Results* table differs from them, the revised manuscript and these files take precedence.
+
+| Path | Content |
+|------|---------|
+| `audit/` | Blinded audit: analysis plan fixed before answers, sampling and analysis scripts, key, anonymized answers (`results/annotator_A.json`, `annotator_B.json`) |
+| `src/exp_r1_revision.py`, `results/r1/r1_bioclip.json`, `r1_dinov2.json` | Full-gradient BADGE, iterative retraining, and crop-level bootstrap intervals |
+| `src/exp_r1_static_clip.py`, `results/r1/r1_static_clip.json` | Paired bootstrap intervals resampling source videos |
+| `src/exp_r1_iterative_ci_clip.py`, `results/r1/r1_iterative_ci_clip.json` | Intervals for the retraining comparison, and the common-species list check on video crops |
+| `src/exp_r1_mie_common_sensitivity.py`, `results/r1/mie_common_sensitivity.json` | Second-site RCTA under two common-species lists |
+| `src/exp_r1_seed_tv.py`, `results/r1/r1_seed_tv.json` | Species-composition TV for the seed-only and full models |
+
+Do not use the `by_source_video` entries in `r1_bioclip.json` and `r1_dinov2.json`. They were grouped by an empty field and are effectively crop-level. Use `r1_static_clip.json` instead. `audit/results/posthoc_clip_bootstrap.json` likewise replaces the video-level intervals in `analysis_both.json`.
 
 ## Code → Result Map
 

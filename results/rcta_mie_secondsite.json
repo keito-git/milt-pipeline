@@ -1,0 +1,291 @@
+{
+  "_meta": {
+    "env": {
+      "hostname": "MacBook-Pro-2.local",
+      "platform": "macOS-26.5.1-arm64-arm-64bit",
+      "python": "3.11.3 (v3.11.3:f3909b8bc8, Apr  4 2023, 20:12:10) [Clang 13.0.0 (clang-1300.0.29.30)]",
+      "numpy": "2.4.6",
+      "script": "/Users/ishitatakashishou/trailcam_bench/rcta_mie_secondsite.py",
+      "started": "2026-07-27T17:52:41",
+      "purpose": "安西W-B-RCTA2: RCTA(binary,alpha=1.0) on Mie second site (n=4736). seed-only LR (Wakayama+Shizuoka video, training-unused site).",
+      "gpu_rule": "CUDA_VISIBLE_DEVICES='' set before any torch import"
+    },
+    "status": "completed",
+    "elapsed_s": 4.0,
+    "finished": "2026-07-27T17:52:45"
+  },
+  "data_info": {
+    "n_eval_mie": 4736,
+    "n_train_seed": 1000,
+    "n_classes_seed_model": 11,
+    "classes_seed_model": [
+      "アライグマ",
+      "イノシシ",
+      "コジュケイ",
+      "タヌキ",
+      "ニホンアナグマ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "ハクビシン",
+      "不明",
+      "誤検出(動物なし)"
+    ],
+    "base_acc_mie": 0.6406,
+    "n_true_rare_mie": 106,
+    "n_rare_all_mie": 193,
+    "n_unknown_mie": 87,
+    "label_distribution_mie": {
+      "タヌキ": 2992,
+      "ニホンジカ": 1455,
+      "不明": 87,
+      "誤検出(動物なし)": 51,
+      "イノシシ": 43,
+      "キジバト": 41,
+      "トラツグミ": 33,
+      "キツネ": 16,
+      "アライグマ": 6,
+      "鳥類": 4,
+      "ニホンザル": 2,
+      "ヤマガラ": 2,
+      "ネコ": 1,
+      "ハクビシン": 1,
+      "その他": 1,
+      "ニホンアナグマ": 1
+    },
+    "true_rare_label_counts_mie": {
+      "キジバト": 41,
+      "トラツグミ": 33,
+      "キツネ": 16,
+      "アライグマ": 6,
+      "鳥類": 4,
+      "ヤマガラ": 2,
+      "ネコ": 1,
+      "ハクビシン": 1,
+      "その他": 1,
+      "ニホンアナグマ": 1
+    },
+    "classes_missing_from_seed_model": [
+      "その他",
+      "キジバト",
+      "キツネ",
+      "トラツグミ",
+      "ネコ",
+      "ヤマガラ",
+      "鳥類"
+    ],
+    "n_unpredictable_samples": 98,
+    "true_rare_mask_definition": "not in COMMON={ニホンジカ,タヌキ,イノシシ,ニホンザル,ニホンノウサギ} and != 誤検出(動物なし) and != 不明 → identified rare species only",
+    "data_hashes": {
+      "embeddings.npy": "eb0d5091fccfc3915433863480f085f4ac7ce1a61fa428012d5fff83baadbb65",
+      "video_embeddings.npy": "49edabeb4e2bedc4969958299a9212c5d20c2978b2261a0790df0a2f1c3b3d67",
+      "seed_labels.json": "13b61d7e498993a41e839bc136f31ca68b531d330917d5ded3adac067572783f",
+      "labels_still_v1.json": "e18aa43dee08a85f350f32dbc7962b8c066091cf9d4f974a439cf28c8c103c71"
+    }
+  },
+  "weight_info": {
+    "weight_type": "binary",
+    "alpha": 1.0,
+    "classes_in_seed_model": [
+      "アライグマ",
+      "イノシシ",
+      "コジュケイ",
+      "タヌキ",
+      "ニホンアナグマ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "ハクビシン",
+      "不明",
+      "誤検出(動物なし)"
+    ],
+    "nonzero_classes": {
+      "アライグマ": 1.0,
+      "コジュケイ": 1.0,
+      "ニホンアナグマ": 1.0,
+      "ハクビシン": 1.0
+    },
+    "zero_classes": [
+      "イノシシ",
+      "タヌキ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "不明",
+      "誤検出(動物なし)"
+    ],
+    "note": "Binary weight: w_c=1 for classes not in COMMON|{不明,誤検出(動物なし)}, else 0. Max-normalized. Derived from training class list only. No eval gt used."
+  },
+  "all_results": {
+    "true_rare_mie": {
+      "RCTA_binary_alpha1.0": {
+        "auc_rare_recall": 0.8856,
+        "auc_acc": 0.8395,
+        "auc_rare_recall_b30": 0.2158,
+        "auc_acc_b30": 0.2168,
+        "capture_B10pct": 0.7547,
+        "capture_B20pct": 0.8302,
+        "capture_B30pct": 0.8962
+      },
+      "confidence": {
+        "auc_rare_recall": 0.5903,
+        "auc_acc": 0.8627,
+        "auc_rare_recall_b30": 0.0733,
+        "auc_acc_b30": 0.2215,
+        "capture_B10pct": 0.1415,
+        "capture_B20pct": 0.3208,
+        "capture_B30pct": 0.4811
+      }
+    },
+    "rare_all_mie": {
+      "RCTA_binary_alpha1.0": {
+        "auc_rare_recall": 0.8503,
+        "auc_acc": 0.8395,
+        "auc_rare_recall_b30": 0.1979,
+        "auc_acc_b30": 0.2168,
+        "capture_B10pct": 0.5233,
+        "capture_B20pct": 0.6373,
+        "capture_B30pct": 0.7358
+      },
+      "confidence": {
+        "auc_rare_recall": 0.7222,
+        "auc_acc": 0.8627,
+        "auc_rare_recall_b30": 0.1348,
+        "auc_acc_b30": 0.2215,
+        "capture_B10pct": 0.2953,
+        "capture_B20pct": 0.4767,
+        "capture_B30pct": 0.5959
+      }
+    }
+  },
+  "random_baselines": {
+    "true_rare_mie": {
+      "auc_rare_mean": 0.5049,
+      "auc_rare_std": 0.0261,
+      "auc_rare_b30_mean": 0.0474,
+      "auc_rare_b30_std": 0.008,
+      "n_shuffles": 2000
+    },
+    "rare_all_mie": {
+      "auc_rare_mean": 0.5674,
+      "auc_rare_std": 0.0181,
+      "auc_rare_b30_mean": 0.0794,
+      "auc_rare_b30_std": 0.0053,
+      "n_shuffles": 2000
+    }
+  },
+  "statistical_tests": {
+    "primary_focus": "true_rare_mie",
+    "RCTA_binary_alpha1.0": {
+      "rcta_auc": 0.8856,
+      "permutation_test_vs_random": {
+        "n_perm": 10000,
+        "n_exceed": 0,
+        "p_value": 0.0001,
+        "formula": "(n_exceed+1)/(N_PERM+1) [Phipson & Smyth 2010]",
+        "significant_at_alpha05": true
+      },
+      "bootstrap_vs_confidence": {
+        "label_a": "RCTA_binary_alpha1.0",
+        "label_b": "confidence",
+        "mean_gap": 0.2907,
+        "ci95": [
+          0.2179,
+          0.3648
+        ],
+        "n_bootstrap": 2000,
+        "significant_at_alpha05": true,
+        "interpretation": "Bootstrap CI on rare_recall_AUC(RCTA_binary_alpha1.0) - rare_recall_AUC(confidence). CI=[0.2179, 0.3648]. 有意(0を含まない) at alpha=0.05."
+      }
+    },
+    "confidence": {
+      "conf_auc": 0.5903,
+      "permutation_test_vs_random": {
+        "n_perm": 10000,
+        "n_exceed": 5,
+        "p_value": 0.0006,
+        "formula": "(n_exceed+1)/(N_PERM+1) [Phipson & Smyth 2010]",
+        "significant_at_alpha05": true
+      }
+    }
+  },
+  "summary": {
+    "site": "Mie stills (三重県静止画, training-unused second site)",
+    "n_eval": 4736,
+    "n_true_rare": 106,
+    "n_rare_all": 193,
+    "n_unknown": 87,
+    "true_rare_label_counts_mie": {
+      "キジバト": 41,
+      "トラツグミ": 33,
+      "キツネ": 16,
+      "アライグマ": 6,
+      "鳥類": 4,
+      "ヤマガラ": 2,
+      "ネコ": 1,
+      "ハクビシン": 1,
+      "その他": 1,
+      "ニホンアナグマ": 1
+    },
+    "model": "seed-only LR (Wakayama+Shizuoka video crops, n_train=1000, 11 classes)",
+    "classes_seed_model": [
+      "アライグマ",
+      "イノシシ",
+      "コジュケイ",
+      "タヌキ",
+      "ニホンアナグマ",
+      "ニホンザル",
+      "ニホンジカ",
+      "ニホンノウサギ",
+      "ハクビシン",
+      "不明",
+      "誤検出(動物なし)"
+    ],
+    "classes_missing_from_seed_model": [
+      "その他",
+      "キジバト",
+      "キツネ",
+      "トラツグミ",
+      "ネコ",
+      "ヤマガラ",
+      "鳥類"
+    ],
+    "n_unpredictable_samples": 98,
+    "rcta_method": "RCTA_binary_alpha1.0",
+    "rcta_nonzero_classes_in_seed_model": [
+      "アライグマ",
+      "コジュケイ",
+      "ニホンアナグマ",
+      "ハクビシン"
+    ],
+    "true_rare_mie": {
+      "RCTA_binary_alpha1.0": {
+        "auc_rare_recall": 0.8856,
+        "auc_acc": 0.8395,
+        "auc_rare_recall_b30": 0.2158,
+        "auc_acc_b30": 0.2168,
+        "capture_B10pct": 0.7547,
+        "capture_B20pct": 0.8302,
+        "capture_B30pct": 0.8962
+      },
+      "confidence": {
+        "auc_rare_recall": 0.5903,
+        "auc_acc": 0.8627,
+        "auc_rare_recall_b30": 0.0733,
+        "auc_acc_b30": 0.2215,
+        "capture_B10pct": 0.1415,
+        "capture_B20pct": 0.3208,
+        "capture_B30pct": 0.4811
+      },
+      "random": {
+        "auc_rare_mean": 0.5049,
+        "auc_rare_std": 0.0261
+      }
+    },
+    "honest_verdict_level": "POSITIVE",
+    "honest_verdict": "RCTA(binary,alpha=1.0) AUC=0.8856 > confidence AUC=0.5903 (gap=+0.2953) — 第2サイトでも有意に上回る。CI=[0.2179, 0.3648] (N=2000), p<0.05。",
+    "rcta_beats_confidence": true,
+    "rcta_significant_vs_confidence": true,
+    "gap_rcta_minus_conf": 0.2953
+  }
+}

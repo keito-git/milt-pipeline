@@ -1,0 +1,192 @@
+{
+ "bioclip": {
+  "n_clips": 2114,
+  "rcta-confidence": {
+   "rare_capture_B10": {
+    "mean": 0.2177,
+    "ci95": [
+     0.1415,
+     0.2981
+    ]
+   },
+   "rare_capture_B30": {
+    "mean": 0.1566,
+    "ci95": [
+     0.0849,
+     0.2339
+    ]
+   },
+   "accuracy_auc": {
+    "mean": -0.0151,
+    "ci95": [
+     -0.0192,
+     -0.0109
+    ]
+   }
+  },
+  "confidence-coreset": {
+   "rare_capture_B10": {
+    "mean": 0.0766,
+    "ci95": [
+     -0.0063,
+     0.1637
+    ]
+   },
+   "rare_capture_B30": {
+    "mean": 0.0441,
+    "ci95": [
+     -0.0718,
+     0.1598
+    ]
+   },
+   "accuracy_auc": {
+    "mean": 0.0327,
+    "ci95": [
+     0.0253,
+     0.0401
+    ]
+   }
+  },
+  "confidence-badge_approx": {
+   "rare_capture_B10": {
+    "mean": 0.0358,
+    "ci95": [
+     -0.0257,
+     0.1004
+    ]
+   },
+   "rare_capture_B30": {
+    "mean": -0.0034,
+    "ci95": [
+     -0.0575,
+     0.0534
+    ]
+   },
+   "accuracy_auc": {
+    "mean": 0.0063,
+    "ci95": [
+     0.0029,
+     0.0098
+    ]
+   }
+  },
+  "confidence-badge_true": {
+   "rare_capture_B10": {
+    "mean": 0.0483,
+    "ci95": [
+     -0.0232,
+     0.1188
+    ]
+   },
+   "rare_capture_B30": {
+    "mean": 0.0402,
+    "ci95": [
+     -0.0302,
+     0.1162
+    ]
+   },
+   "accuracy_auc": {
+    "mean": 0.0167,
+    "ci95": [
+     0.0118,
+     0.0216
+    ]
+   }
+  }
+ },
+ "dinov2": {
+  "n_clips": 2114,
+  "rcta-confidence": {
+   "rare_capture_B10": {
+    "mean": 0.5837,
+    "ci95": [
+     0.5,
+     0.6667
+    ]
+   },
+   "rare_capture_B30": {
+    "mean": 0.3459,
+    "ci95": [
+     0.2735,
+     0.4212
+    ]
+   },
+   "accuracy_auc": {
+    "mean": -0.0005,
+    "ci95": [
+     -0.0035,
+     0.0022
+    ]
+   }
+  },
+  "confidence-coreset": {
+   "rare_capture_B10": {
+    "mean": -0.0768,
+    "ci95": [
+     -0.1503,
+     0.0
+    ]
+   },
+   "rare_capture_B30": {
+    "mean": 0.0033,
+    "ci95": [
+     -0.0763,
+     0.0837
+    ]
+   },
+   "accuracy_auc": {
+    "mean": 0.0255,
+    "ci95": [
+     0.0202,
+     0.0309
+    ]
+   }
+  },
+  "confidence-badge_approx": {
+   "rare_capture_B10": {
+    "mean": -0.0443,
+    "ci95": [
+     -0.0749,
+     -0.0148
+    ]
+   },
+   "rare_capture_B30": {
+    "mean": -0.0204,
+    "ci95": [
+     -0.0417,
+     0.0
+    ]
+   },
+   "accuracy_auc": {
+    "mean": 0.0004,
+    "ci95": [
+     -0.0007,
+     0.0017
+    ]
+   }
+  },
+  "confidence-badge_true": {
+   "rare_capture_B10": {
+    "mean": -0.0005,
+    "ci95": [
+     -0.0383,
+     0.0385
+    ]
+   },
+   "rare_capture_B30": {
+    "mean": -0.0004,
+    "ci95": [
+     -0.0332,
+     0.0344
+    ]
+   },
+   "accuracy_auc": {
+    "mean": 0.0007,
+    "ci95": [
+     -0.0006,
+     0.002
+    ]
+   }
+  }
+ }
+}

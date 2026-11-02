@@ -1,0 +1,997 @@
+{
+ "per_auditor": [
+  {
+   "auditor": "auditor1",
+   "n_items": 897,
+   "n_answered": 897,
+   "auto_label_by_band_random_only": {
+    "[0.0,0.5)": {
+     "n": 80,
+     "n_blind_unknown": 16,
+     "excluding_unknown": {
+      "errors": 45,
+      "n": 64,
+      "rate": 0.7031,
+      "wilson95": [
+       0.5823,
+       0.801
+      ],
+      "video_cluster_boot95": [
+       0.5938,
+       0.8125
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 55,
+      "n": 80,
+      "rate": 0.6875,
+      "wilson95": [
+       0.5793,
+       0.7785
+      ]
+     }
+    },
+    "[0.5,0.7)": {
+     "n": 80,
+     "n_blind_unknown": 26,
+     "excluding_unknown": {
+      "errors": 24,
+      "n": 54,
+      "rate": 0.4444,
+      "wilson95": [
+       0.32,
+       0.5762
+      ],
+      "video_cluster_boot95": [
+       0.3148,
+       0.5741
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 29,
+      "n": 80,
+      "rate": 0.3625,
+      "wilson95": [
+       0.2657,
+       0.4719
+      ]
+     }
+    },
+    "[0.7,0.9)": {
+     "n": 80,
+     "n_blind_unknown": 19,
+     "excluding_unknown": {
+      "errors": 9,
+      "n": 61,
+      "rate": 0.1475,
+      "wilson95": [
+       0.0796,
+       0.2572
+      ],
+      "video_cluster_boot95": [
+       0.0656,
+       0.2295
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 10,
+      "n": 80,
+      "rate": 0.125,
+      "wilson95": [
+       0.0693,
+       0.215
+      ]
+     }
+    },
+    "[0.9,1.0]": {
+     "n": 522,
+     "n_blind_unknown": 15,
+     "excluding_unknown": {
+      "errors": 2,
+      "n": 507,
+      "rate": 0.0039,
+      "wilson95": [
+       0.0011,
+       0.0143
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.0099
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 12,
+      "n": 522,
+      "rate": 0.023,
+      "wilson95": [
+       0.0132,
+       0.0397
+      ]
+     }
+    }
+   },
+   "gold_error_by_band_random_only": {
+    "[0.0,0.5)": {
+     "n": 80,
+     "n_blind_unknown": 16,
+     "excluding_unknown": {
+      "errors": 2,
+      "n": 64,
+      "rate": 0.0312,
+      "wilson95": [
+       0.0086,
+       0.107
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.0781
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 18,
+      "n": 80,
+      "rate": 0.225,
+      "wilson95": [
+       0.1473,
+       0.3279
+      ]
+     }
+    },
+    "[0.5,0.7)": {
+     "n": 80,
+     "n_blind_unknown": 26,
+     "excluding_unknown": {
+      "errors": 3,
+      "n": 54,
+      "rate": 0.0556,
+      "wilson95": [
+       0.0191,
+       0.1511
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.1296
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 25,
+      "n": 80,
+      "rate": 0.3125,
+      "wilson95": [
+       0.2215,
+       0.4207
+      ]
+     }
+    },
+    "[0.7,0.9)": {
+     "n": 80,
+     "n_blind_unknown": 19,
+     "excluding_unknown": {
+      "errors": 0,
+      "n": 61,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.0592
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.0
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 14,
+      "n": 80,
+      "rate": 0.175,
+      "wilson95": [
+       0.1072,
+       0.2726
+      ]
+     }
+    },
+    "[0.9,1.0]": {
+     "n": 522,
+     "n_blind_unknown": 15,
+     "excluding_unknown": {
+      "errors": 0,
+      "n": 507,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.0075
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.0
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 14,
+      "n": 522,
+      "rate": 0.0268,
+      "wilson95": [
+       0.016,
+       0.0445
+      ]
+     }
+    }
+   },
+   "high_conf_common_vs_rare": {
+    "auto_common": {
+     "n": 518,
+     "n_blind_unknown": 15,
+     "excluding_unknown": {
+      "errors": 2,
+      "n": 503,
+      "rate": 0.004,
+      "wilson95": [
+       0.0011,
+       0.0144
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.0099
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 12,
+      "n": 518,
+      "rate": 0.0232,
+      "wilson95": [
+       0.0133,
+       0.0401
+      ]
+     }
+    },
+    "auto_rare": {
+     "n": 4,
+     "n_blind_unknown": 0,
+     "excluding_unknown": {
+      "errors": 0,
+      "n": 4,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.4899
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.0
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 0,
+      "n": 4,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.4899
+      ]
+     }
+    }
+   },
+   "rare_all_bands_descriptive": {
+    "gold_rare_recall_of_blind_rare": {
+     "[0.0,0.5)": {
+      "n": 26,
+      "n_blind_unknown": 5,
+      "excluding_unknown": {
+       "errors": 16,
+       "n": 21,
+       "rate": 0.7619,
+       "wilson95": [
+        0.5491,
+        0.8937
+       ],
+       "video_cluster_boot95": [
+        0.5714,
+        0.9048
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 19,
+       "n": 26,
+       "rate": 0.7308,
+       "wilson95": [
+        0.5392,
+        0.863
+       ]
+      }
+     },
+     "[0.5,0.7)": {
+      "n": 25,
+      "n_blind_unknown": 7,
+      "excluding_unknown": {
+       "errors": 14,
+       "n": 18,
+       "rate": 0.7778,
+       "wilson95": [
+        0.5478,
+        0.91
+       ],
+       "video_cluster_boot95": [
+        0.5556,
+        0.9444
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 16,
+       "n": 25,
+       "rate": 0.64,
+       "wilson95": [
+        0.4452,
+        0.7975
+       ]
+      }
+     },
+     "[0.7,0.9)": {
+      "n": 27,
+      "n_blind_unknown": 11,
+      "excluding_unknown": {
+       "errors": 4,
+       "n": 16,
+       "rate": 0.25,
+       "wilson95": [
+        0.1018,
+        0.495
+       ],
+       "video_cluster_boot95": [
+        0.0625,
+        0.4375
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 5,
+       "n": 27,
+       "rate": 0.1852,
+       "wilson95": [
+        0.0818,
+        0.367
+       ]
+      }
+     },
+     "[0.9,1.0]": {
+      "n": 4,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 0,
+       "n": 4,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.4899
+       ],
+       "video_cluster_boot95": [
+        0.0,
+        0.0
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 0,
+       "n": 4,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.4899
+       ]
+      }
+     }
+    },
+    "auto_rare_precision": {
+     "[0.0,0.5)": {
+      "n": 32,
+      "n_blind_unknown": 1,
+      "excluding_unknown": {
+       "errors": 26,
+       "n": 31,
+       "rate": 0.8387,
+       "wilson95": [
+        0.6737,
+        0.9291
+       ],
+       "video_cluster_boot95": [
+        0.7097,
+        0.9677
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 27,
+       "n": 32,
+       "rate": 0.8438,
+       "wilson95": [
+        0.6825,
+        0.9314
+       ]
+      }
+     },
+     "[0.5,0.7)": {
+      "n": 23,
+      "n_blind_unknown": 2,
+      "excluding_unknown": {
+       "errors": 17,
+       "n": 21,
+       "rate": 0.8095,
+       "wilson95": [
+        0.6,
+        0.9233
+       ],
+       "video_cluster_boot95": [
+        0.619,
+        0.9524
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 19,
+       "n": 23,
+       "rate": 0.8261,
+       "wilson95": [
+        0.6286,
+        0.9302
+       ]
+      }
+     },
+     "[0.7,0.9)": {
+      "n": 12,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 0,
+       "n": 12,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.2425
+       ],
+       "video_cluster_boot95": [
+        0.0,
+        0.0
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 0,
+       "n": 12,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.2425
+       ]
+      }
+     },
+     "[0.9,1.0]": {
+      "n": 4,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 0,
+       "n": 4,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.4899
+       ],
+       "video_cluster_boot95": [
+        0.0,
+        0.0
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 0,
+       "n": 4,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.4899
+       ]
+      }
+     }
+    }
+   },
+   "blind_vs_gold_kappa_random_only": 0.836,
+   "intra_rater": {
+    "n_pairs": 30,
+    "agreement": 1.0
+   },
+   "seconds_per_item": {
+    "median": 2.1,
+    "total_hours": 0.66
+   }
+  },
+  {
+   "auditor": "auditor2",
+   "n_items": 897,
+   "n_answered": 897,
+   "auto_label_by_band_random_only": {
+    "[0.0,0.5)": {
+     "n": 80,
+     "n_blind_unknown": 0,
+     "excluding_unknown": {
+      "errors": 58,
+      "n": 80,
+      "rate": 0.725,
+      "wilson95": [
+       0.6186,
+       0.8108
+      ],
+      "video_cluster_boot95": [
+       0.6372,
+       0.8125
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 58,
+      "n": 80,
+      "rate": 0.725,
+      "wilson95": [
+       0.6186,
+       0.8108
+      ]
+     }
+    },
+    "[0.5,0.7)": {
+     "n": 80,
+     "n_blind_unknown": 3,
+     "excluding_unknown": {
+      "errors": 44,
+      "n": 77,
+      "rate": 0.5714,
+      "wilson95": [
+       0.4601,
+       0.676
+      ],
+      "video_cluster_boot95": [
+       0.4675,
+       0.6883
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 44,
+      "n": 80,
+      "rate": 0.55,
+      "wilson95": [
+       0.4412,
+       0.6542
+      ]
+     }
+    },
+    "[0.7,0.9)": {
+     "n": 80,
+     "n_blind_unknown": 2,
+     "excluding_unknown": {
+      "errors": 25,
+      "n": 78,
+      "rate": 0.3205,
+      "wilson95": [
+       0.2275,
+       0.4304
+      ],
+      "video_cluster_boot95": [
+       0.2179,
+       0.4234
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 25,
+      "n": 80,
+      "rate": 0.3125,
+      "wilson95": [
+       0.2215,
+       0.4207
+      ]
+     }
+    },
+    "[0.9,1.0]": {
+     "n": 522,
+     "n_blind_unknown": 1,
+     "excluding_unknown": {
+      "errors": 6,
+      "n": 521,
+      "rate": 0.0115,
+      "wilson95": [
+       0.0053,
+       0.0249
+      ],
+      "video_cluster_boot95": [
+       0.0038,
+       0.0211
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 6,
+      "n": 522,
+      "rate": 0.0115,
+      "wilson95": [
+       0.0053,
+       0.0248
+      ]
+     }
+    }
+   },
+   "gold_error_by_band_random_only": {
+    "[0.0,0.5)": {
+     "n": 80,
+     "n_blind_unknown": 0,
+     "excluding_unknown": {
+      "errors": 4,
+      "n": 80,
+      "rate": 0.05,
+      "wilson95": [
+       0.0196,
+       0.1216
+      ],
+      "video_cluster_boot95": [
+       0.0125,
+       0.1
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 4,
+      "n": 80,
+      "rate": 0.05,
+      "wilson95": [
+       0.0196,
+       0.1216
+      ]
+     }
+    },
+    "[0.5,0.7)": {
+     "n": 80,
+     "n_blind_unknown": 3,
+     "excluding_unknown": {
+      "errors": 10,
+      "n": 77,
+      "rate": 0.1299,
+      "wilson95": [
+       0.0721,
+       0.2228
+      ],
+      "video_cluster_boot95": [
+       0.0649,
+       0.2078
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 12,
+      "n": 80,
+      "rate": 0.15,
+      "wilson95": [
+       0.0879,
+       0.2441
+      ]
+     }
+    },
+    "[0.7,0.9)": {
+     "n": 80,
+     "n_blind_unknown": 2,
+     "excluding_unknown": {
+      "errors": 5,
+      "n": 78,
+      "rate": 0.0641,
+      "wilson95": [
+       0.0277,
+       0.1414
+      ],
+      "video_cluster_boot95": [
+       0.0128,
+       0.1282
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 5,
+      "n": 80,
+      "rate": 0.0625,
+      "wilson95": [
+       0.027,
+       0.1381
+      ]
+     }
+    },
+    "[0.9,1.0]": {
+     "n": 522,
+     "n_blind_unknown": 1,
+     "excluding_unknown": {
+      "errors": 2,
+      "n": 521,
+      "rate": 0.0038,
+      "wilson95": [
+       0.0011,
+       0.0139
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.0096
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 3,
+      "n": 522,
+      "rate": 0.0057,
+      "wilson95": [
+       0.002,
+       0.0168
+      ]
+     }
+    }
+   },
+   "high_conf_common_vs_rare": {
+    "auto_common": {
+     "n": 518,
+     "n_blind_unknown": 1,
+     "excluding_unknown": {
+      "errors": 6,
+      "n": 517,
+      "rate": 0.0116,
+      "wilson95": [
+       0.0053,
+       0.0251
+      ],
+      "video_cluster_boot95": [
+       0.0039,
+       0.0213
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 6,
+      "n": 518,
+      "rate": 0.0116,
+      "wilson95": [
+       0.0053,
+       0.025
+      ]
+     }
+    },
+    "auto_rare": {
+     "n": 4,
+     "n_blind_unknown": 0,
+     "excluding_unknown": {
+      "errors": 0,
+      "n": 4,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.4899
+      ],
+      "video_cluster_boot95": [
+       0.0,
+       0.0
+      ]
+     },
+     "counting_unknown_as_error": {
+      "errors": 0,
+      "n": 4,
+      "rate": 0.0,
+      "wilson95": [
+       0.0,
+       0.4899
+      ]
+     }
+    }
+   },
+   "rare_all_bands_descriptive": {
+    "gold_rare_recall_of_blind_rare": {
+     "[0.0,0.5)": {
+      "n": 26,
+      "n_blind_unknown": 1,
+      "excluding_unknown": {
+       "errors": 20,
+       "n": 25,
+       "rate": 0.8,
+       "wilson95": [
+        0.6087,
+        0.9114
+       ],
+       "video_cluster_boot95": [
+        0.64,
+        0.96
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 21,
+       "n": 26,
+       "rate": 0.8077,
+       "wilson95": [
+        0.6212,
+        0.9149
+       ]
+      }
+     },
+     "[0.5,0.7)": {
+      "n": 25,
+      "n_blind_unknown": 1,
+      "excluding_unknown": {
+       "errors": 20,
+       "n": 24,
+       "rate": 0.8333,
+       "wilson95": [
+        0.6415,
+        0.9332
+       ],
+       "video_cluster_boot95": [
+        0.6667,
+        0.9583
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 20,
+       "n": 25,
+       "rate": 0.8,
+       "wilson95": [
+        0.6087,
+        0.9114
+       ]
+      }
+     },
+     "[0.7,0.9)": {
+      "n": 27,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 15,
+       "n": 27,
+       "rate": 0.5556,
+       "wilson95": [
+        0.3731,
+        0.7241
+       ],
+       "video_cluster_boot95": [
+        0.3704,
+        0.7407
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 15,
+       "n": 27,
+       "rate": 0.5556,
+       "wilson95": [
+        0.3731,
+        0.7241
+       ]
+      }
+     },
+     "[0.9,1.0]": {
+      "n": 4,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 0,
+       "n": 4,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.4899
+       ],
+       "video_cluster_boot95": [
+        0.0,
+        0.0
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 0,
+       "n": 4,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.4899
+       ]
+      }
+     }
+    },
+    "auto_rare_precision": {
+     "[0.0,0.5)": {
+      "n": 32,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 27,
+       "n": 32,
+       "rate": 0.8438,
+       "wilson95": [
+        0.6825,
+        0.9314
+       ],
+       "video_cluster_boot95": [
+        0.7188,
+        0.9688
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 27,
+       "n": 32,
+       "rate": 0.8438,
+       "wilson95": [
+        0.6825,
+        0.9314
+       ]
+      }
+     },
+     "[0.5,0.7)": {
+      "n": 23,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 19,
+       "n": 23,
+       "rate": 0.8261,
+       "wilson95": [
+        0.6286,
+        0.9302
+       ],
+       "video_cluster_boot95": [
+        0.6522,
+        0.9565
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 19,
+       "n": 23,
+       "rate": 0.8261,
+       "wilson95": [
+        0.6286,
+        0.9302
+       ]
+      }
+     },
+     "[0.7,0.9)": {
+      "n": 12,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 0,
+       "n": 12,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.2425
+       ],
+       "video_cluster_boot95": [
+        0.0,
+        0.0
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 0,
+       "n": 12,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.2425
+       ]
+      }
+     },
+     "[0.9,1.0]": {
+      "n": 4,
+      "n_blind_unknown": 0,
+      "excluding_unknown": {
+       "errors": 0,
+       "n": 4,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.4899
+       ],
+       "video_cluster_boot95": [
+        0.0,
+        0.0
+       ]
+      },
+      "counting_unknown_as_error": {
+       "errors": 0,
+       "n": 4,
+       "rate": 0.0,
+       "wilson95": [
+        0.0,
+        0.4899
+       ]
+      }
+     }
+    }
+   },
+   "blind_vs_gold_kappa_random_only": 0.9416,
+   "intra_rater": {
+    "n_pairs": 30,
+    "agreement": 1.0
+   },
+   "seconds_per_item": {
+    "median": 1.5,
+    "total_hours": 0.45
+   }
+  }
+ ],
+ "between_auditors": {
+  "n": 867,
+  "kappa": 0.8292,
+  "agreement": 0.8904
+ }
+}

@@ -1,0 +1,130 @@
+{
+  "description": "Second-site generalization: Mie (三重県) still photos evaluated with seed-only LR (trained on Wakayama+Shizuoka video, n=1000). No Mie data used in training → clean generalization test. Addresses W-B7 (安西/辻/氷室).",
+  "training": "seed_only LR (Wakayama n=660 + Shizuoka n=340 video crops)",
+  "training_n": 1000,
+  "eval_site": "Mie (三重県) still photos (labels_still_v1.json, confirmed labels)",
+  "n_mie": 4736,
+  "n_rare_mie": 193,
+  "n_classes_model": 11,
+  "classes_model": [
+    "アライグマ",
+    "イノシシ",
+    "コジュケイ",
+    "タヌキ",
+    "ニホンアナグマ",
+    "ニホンザル",
+    "ニホンジカ",
+    "ニホンノウサギ",
+    "ハクビシン",
+    "不明",
+    "誤検出(動物なし)"
+  ],
+  "classes_mie": [
+    "その他",
+    "アライグマ",
+    "イノシシ",
+    "キジバト",
+    "キツネ",
+    "タヌキ",
+    "トラツグミ",
+    "ニホンアナグマ",
+    "ニホンザル",
+    "ニホンジカ",
+    "ネコ",
+    "ハクビシン",
+    "ヤマガラ",
+    "不明",
+    "誤検出(動物なし)",
+    "鳥類"
+  ],
+  "classes_missing_from_seed_model": [
+    "その他",
+    "キジバト",
+    "キツネ",
+    "トラツグミ",
+    "ネコ",
+    "ヤマガラ",
+    "鳥類"
+  ],
+  "n_mie_samples_unpredictable": 98,
+  "coverage_note": "7 Mie classes (['その他', 'キジバト', 'キツネ', 'トラツグミ', 'ネコ', 'ヤマガラ', '鳥類']) cannot be predicted by seed-only model (not seen during training). These account for 98/4736 Mie samples — all will be misclassified regardless of confidence.",
+  "label_distribution_mie": {
+    "イノシシ": 43,
+    "キツネ": 16,
+    "タヌキ": 2992,
+    "ニホンジカ": 1455,
+    "誤検出(動物なし)": 51,
+    "アライグマ": 6,
+    "不明": 87,
+    "ネコ": 1,
+    "ハクビシン": 1,
+    "ニホンザル": 2,
+    "その他": 1,
+    "トラツグミ": 33,
+    "キジバト": 41,
+    "鳥類": 4,
+    "ヤマガラ": 2,
+    "ニホンアナグマ": 1
+  },
+  "accuracy": 0.6406,
+  "macro_f1": 0.1239,
+  "budgets_pct": [
+    0,
+    5,
+    10,
+    20,
+    30,
+    50,
+    100
+  ],
+  "triage_confidence": {
+    "description": "Confidence ordering (least-confident first) on Mie stills",
+    "auc_acc_budget": 0.8627,
+    "auc_rare_budget": 0.7222,
+    "auc_acc_budget_b30": 0.2215,
+    "acc_by_budget": [
+      0.6406,
+      0.6818,
+      0.7177,
+      0.7694,
+      0.8133,
+      0.8851,
+      1.0
+    ],
+    "rare_recall_by_budget": [
+      0.1347,
+      0.2798,
+      0.399,
+      0.5492,
+      0.6528,
+      0.7772,
+      1.0
+    ]
+  },
+  "triage_random": {
+    "description": "Random ordering (2000 permutations)",
+    "n_permutations": 2000,
+    "auc_acc_mean": 0.8203,
+    "auc_acc_std": 0.0019
+  },
+  "permutation_test": {
+    "conf_auc": 0.8627,
+    "rand_mean": 0.8203,
+    "n_exceed": 0,
+    "n_permutations": 2000,
+    "p_value": 0.0005,
+    "formula": "(n_exceed+1)/(N_PERM+1) [Phipson & Smyth 2010]"
+  },
+  "bootstrap_ci_confidence_vs_random": {
+    "mean_gap": 0.0439,
+    "ci95": [
+      0.0389,
+      0.0494
+    ],
+    "n_bootstrap": 500,
+    "significant_at_alpha05": true,
+    "note": "Positive gap = order_a > order_b in AUC. CI excludes 0 → significant."
+  },
+  "run_timestamp": "2026-07-27T18:08:31",
+  "elapsed_s": 1.9
+}

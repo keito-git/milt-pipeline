@@ -1,0 +1,202 @@
+{
+ "bioclip": {
+  "auc": {
+   "confidence": 0.7702,
+   "coreset": 0.7034,
+   "badge": 0.7335,
+   "random": 0.6907
+  },
+  "group_key": "videos",
+  "n_groups": 2114,
+  "gaps": {
+   "badge": {
+    "mean": 0.0368,
+    "ci_crop": [
+     0.0325,
+     0.0411
+    ],
+    "ci_video": [
+     0.0314,
+     0.0426
+    ]
+   },
+   "coreset": {
+    "mean": 0.0668,
+    "ci_crop": [
+     0.0594,
+     0.0743
+    ],
+    "ci_video": [
+     0.0564,
+     0.0769
+    ]
+   },
+   "random": {
+    "mean": 0.0796,
+    "ci_crop": [
+     0.0737,
+     0.0853
+    ],
+    "ci_video": [
+     0.0716,
+     0.0873
+    ]
+   }
+  },
+  "seed_only_video": {
+   "seed_top5": [
+    "イノシシ",
+    "コジュケイ",
+    "ニホンザル",
+    "ニホンジカ",
+    "ニホンノウサギ"
+   ],
+   "runs": {
+    "score=published|target=published": {
+     "n": 249,
+     "rcta": [
+      0.406,
+      0.675
+     ],
+     "conf": [
+      0.245,
+      0.566
+     ]
+    },
+    "score=published|target=seed_top5": {
+     "n": 368,
+     "rcta": [
+      0.361,
+      0.66
+     ],
+     "conf": [
+      0.253,
+      0.579
+     ]
+    },
+    "score=seed_top5|target=published": {
+     "n": 249,
+     "rcta": [
+      0.317,
+      0.534
+     ],
+     "conf": [
+      0.245,
+      0.566
+     ]
+    },
+    "score=seed_top5|target=seed_top5": {
+     "n": 368,
+     "rcta": [
+      0.451,
+      0.655
+     ],
+     "conf": [
+      0.253,
+      0.579
+     ]
+    }
+   }
+  }
+ },
+ "dinov2": {
+  "auc": {
+   "confidence": 0.9144,
+   "coreset": 0.8739,
+   "badge": 0.9167,
+   "random": 0.8503
+  },
+  "group_key": "videos",
+  "n_groups": 2114,
+  "gaps": {
+   "badge": {
+    "mean": -0.0023,
+    "ci_crop": [
+     -0.004,
+     -0.0006
+    ],
+    "ci_video": [
+     -0.0042,
+     -0.0006
+    ]
+   },
+   "coreset": {
+    "mean": 0.0405,
+    "ci_crop": [
+     0.0359,
+     0.0452
+    ],
+    "ci_video": [
+     0.0344,
+     0.0469
+    ]
+   },
+   "random": {
+    "mean": 0.0641,
+    "ci_crop": [
+     0.0604,
+     0.0679
+    ],
+    "ci_video": [
+     0.0593,
+     0.0689
+    ]
+   }
+  },
+  "seed_only_video": {
+   "seed_top5": [
+    "イノシシ",
+    "コジュケイ",
+    "ニホンザル",
+    "ニホンジカ",
+    "ニホンノウサギ"
+   ],
+   "runs": {
+    "score=published|target=published": {
+     "n": 249,
+     "rcta": [
+      0.811,
+      0.908
+     ],
+     "conf": [
+      0.249,
+      0.598
+     ]
+    },
+    "score=published|target=seed_top5": {
+     "n": 368,
+     "rcta": [
+      0.715,
+      0.87
+     ],
+     "conf": [
+      0.264,
+      0.685
+     ]
+    },
+    "score=seed_top5|target=published": {
+     "n": 249,
+     "rcta": [
+      0.699,
+      0.807
+     ],
+     "conf": [
+      0.249,
+      0.598
+     ]
+    },
+    "score=seed_top5|target=seed_top5": {
+     "n": 368,
+     "rcta": [
+      0.723,
+      0.861
+     ],
+     "conf": [
+      0.264,
+      0.685
+     ]
+    }
+   }
+  }
+ }
+}
